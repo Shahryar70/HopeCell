@@ -23,7 +23,7 @@ const TopNavbar = () => {
               />
             </svg>
             <a href="tel:+02038181875" className="text-sm hover:text-teal-400 transition-colors">
-              <span className="hidden md:inline">Support Line | </span>0203 8181 875
+              <span className="hidden md:inline">Support Line | </span> + 92 308 8949882
             </a>
           </div>
 
