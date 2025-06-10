@@ -14,12 +14,15 @@ const HeroBanner = () => {
         },
         {
             bgImage: "/Assets/Images/Home/Hero2.png",    
+             bgMobile: "/Assets/Images/Home/Hero2.png",
         },
         {
             bgImage: "/Assets/Images/Home/Hero3.png",
+             bgMobile: "/Assets/Images/Home/Hero3.png",
         },
         {
             bgImage: "/Assets/Images/Home/Hero4.png",
+             bgMobile: "/Assets/Images/Home/Hero4.png",
         }
     ];
 

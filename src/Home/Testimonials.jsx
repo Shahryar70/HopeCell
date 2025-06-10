@@ -21,8 +21,8 @@ const Testimonials = () => {
   
     ];
   return (
-<section className="py-12 bg-white">
-      <h2 className="text-3xl font-bold text-center mb-2">Voices of Hope</h2>
+<section className="py-12 bg-teal-50">
+      <h2 className="text-4xl font-extrabold text-center mb-2">Voices of Hope</h2>
       <p className="text-center mb-12">Real stories from our community</p>
 
       <Swiper
@@ -33,7 +33,7 @@ const Testimonials = () => {
       >
         {Stories.map((story, i) => (
           <SwiperSlide key={i}>
-            <div className="bg-gray-50 p-8 rounded-xl shadow-sm max-w-3xl mx-auto">
+            <div className="bg-white p-8 rounded-xl shadow-sm max-w-3xl mx-auto">
               <FaQuoteLeft className="text-teal-500 text-4xl mb-4" />
               <p className="text-lg italic">"{story.quote}"</p>
               <div className="mt-6 flex items-center">

@@ -12,7 +12,7 @@ const UrgentNeeds = () => {
       id: 1,
       type: "AB+ Blood Donor",
       patient: "8yr old with Leukemia",
-      location: "Delhi AIIMS",
+      location: "Bait-ul-Sukoon Cancer Hospital",
       deadline: "48 HOURS",
       priority: "Critical"
     },
@@ -20,7 +20,7 @@ const UrgentNeeds = () => {
       id: 2,
       type: "Bone Marrow Match",
       patient: "22yr old female",
-      location: "Mumbai Tata Memorial",
+      location: "Shaukat Khanum Memorial Cancer Hospital ",
       deadline: "1 WEEK",
       priority: "High"
     },
@@ -28,7 +28,7 @@ const UrgentNeeds = () => {
       id: 3,
       type: "Platelet Donor (A-)",
       patient: "45yr old male",
-      location: "Bangalore",
+      location: "Ziauddin Cancer Hospital",
       deadline: "3 DAYS",
       priority: "Urgent"
     },
@@ -36,16 +36,16 @@ const UrgentNeeds = () => {
       id: 4,
       type: "Financial Support",
       patient: "Child's chemotherapy",
-      amount: "₹85,000",
-      location: "Hyderabad",
+      amount: "85,000 Rs",
+      location: "The Cancer Foundation Hospital",
       deadline: "Ongoing"
     },
     {
       id: 5,
       type: "Financial Support",
       patient: "Child's chemotherapy",
-      amount: "₹85,000",
-      location: "Hyderabad",
+      amount: "85,000 Rs",
+      location: "Islambad",
       deadline: "Ongoing"
     }
   ];
@@ -77,16 +77,16 @@ const renderCaseCard = (caseItem) => (
       {/* Footer */}
       <div className="pt-4 mt-auto border-t border-gray-100 flex justify-between items-center">
         <span className="text-sm font-medium">{caseItem.deadline}</span>
-        <button className="btn btn-sm btn-error">Help Now</button>
+        <button className="btn btn-sm bg-red-600 text-white">Help Now</button>
       </div>
     </div>
   </div>
 );
 
   return (
-    <section className="py-8 bg-gray-50">
+    <section className="py-8 bg-teal-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-4">Urgent Cases Needing Help</h2>
+        <h2 className="text-4xl font-extrabold text-center mb-4">Urgent Cases Needing Help</h2>
         <p className="text-center mb-12 max-w-2xl mx-auto text-gray-600">
           Real patients who need support today
         </p>

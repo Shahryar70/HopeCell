@@ -43,7 +43,7 @@ const Process = () => {
 
   return (
     <section className="py-8 bg-white">
-      <h2 className="text-3xl font-bold text-center mb-4">How HopeCell Works</h2>
+      <h2 className="text-4xl font-extrabold text-center mb-4">How HopeCell Works</h2>
       <p className="text-center mb-12 max-w-2xl mx-auto text-gray-600">
         From registration to life-saving donation - your journey matters
       </p>

@@ -7,6 +7,8 @@ import UrgentNeeds from './Home/UrgentNeeds';
 import Header from './Home/Header';
 import Testimonials from './Home/Testimonials';
 import TreatmentSupport from './Home/TreatmentSupport';
+import DonorCTA from './Home/DonorCTA';
+import Footer from './Home/Footer';
 
 function App() {
   return (
@@ -14,10 +16,12 @@ function App() {
         <Header/>
      <HeroBanner/>
      <States/>
-     <Process/>
-     <UrgentNeeds/>
+     <Process/> 
      <Testimonials/>
-     <TreatmentSupport/>
+      <TreatmentSupport/>
+     <UrgentNeeds/>
+       <DonorCTA/>
+       <Footer/>
     </div>
   );
 }

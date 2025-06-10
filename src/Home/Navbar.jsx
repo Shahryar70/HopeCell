@@ -70,10 +70,10 @@ export const Navbar = ({ withTop = false }) => {
             <li><a href="/counseling" className="text-sm">Counseling</a></li>
             <li><a href="/about" className="text-base">About Us</a></li>
             <li className="mt-2">
-              <a href="/register-donor" className="btn btn-sm btn-error text-white">Join Registry</a>
+              <a href="/register-donor" className="btn btn-sm bg-red-600 text-white">Join Registry</a>
             </li>
             <li>
-              <a href="/donate" className="btn btn-sm btn-success text-white">Donate</a>
+              <a href="/donate" className="btn btn-sm bg-teal-600 text-white">Donate</a>
             </li>
           </ul>
         </div>
