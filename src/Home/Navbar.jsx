@@ -1,9 +1,9 @@
 import React from 'react'
 import { BiChevronDown, BiMenu } from "react-icons/bi";
-export const Navbar = () => {
+export const Navbar = ({ withTop = false }) => {
   return (
     <div>
-  <nav className='sticky top-0 left-0 w-full shadow-md bg-white z-50'>
+    <nav className={`z-50 w-full shadow-md bg-white transition-all duration-300 ${withTop ? 'sticky top-0' : 'fixed top-0'}`}>
     <div className='container flex items-center justify-between px-4 py-3'>
       
       {/* Logo */}
