@@ -4,6 +4,8 @@ import { Navbar } from './Home/Navbar';
 import TopNavbar from './Home/TopNavbar';
 import HeroBanner from './Home/HeroBanner';
 import States from './Home/States';
+import Process from './Home/Process';
+import UrgentNeeds from './Home/UrgentNeeds';
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
      <Navbar/>
      <HeroBanner/>
      <States/>
+     <Process/>
+     <UrgentNeeds/>
     </div>
   );
 }

@@ -8,7 +8,7 @@ const States = () => {
     ];
   return (
     <div>
-        <section className='py-4 bg-teal-50'>
+        <section className='py-8 bg-teal-50'>
             <div className='container mx-auto grid grid-cols-3 gap-4 text-center'>
         {stats.map((stat, i)=>(
             <div key={i} className='p-4'>
