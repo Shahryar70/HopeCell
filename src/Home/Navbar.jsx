@@ -47,7 +47,7 @@ export const Navbar = ({ withTop = false }) => {
       
         
         {/* Action Buttons */}
-        <a href="/register-donor" className="min-h-0 rounded-full btn bg-red-600 text-white hover:bg-red-700 px-6">
+        <a href="/admin" className="min-h-0 rounded-full btn bg-red-600 text-white hover:bg-red-700 px-6">
           JOIN DONOR REGISTRY
         </a>
       
