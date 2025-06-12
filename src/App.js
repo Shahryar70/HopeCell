@@ -1,27 +1,19 @@
-import logo from './logo.svg';
+import React from 'react';
+import LoginPage from './AdminPanel/LoginPage';
 import './App.css';
-import HeroBanner from './Home/HeroBanner';
-import States from './Home/States';
-import Process from './Home/Process';
-import UrgentNeeds from './Home/UrgentNeeds';
-import Header from './Home/Header';
-import Testimonials from './Home/Testimonials';
-import TreatmentSupport from './Home/TreatmentSupport';
-import DonorCTA from './Home/DonorCTA';
-import Footer from './Home/Footer';
+import HomePagesCall from './HomePagesCall';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div>
-        <Header/>
-     <HeroBanner/>
-     <States/>
-     <Process/> 
-     <Testimonials/>
-      <TreatmentSupport/>
-     <UrgentNeeds/>
-       <DonorCTA/>
-       <Footer/>
+        <Router>
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/" element={<HomePagesCall />} />
+      </Routes>
+    </Router>
+   
     </div>
   );
 }
