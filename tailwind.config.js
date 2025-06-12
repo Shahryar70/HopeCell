@@ -9,4 +9,5 @@ module.exports = {
   plugins: [
     require('daisyui'), // ✅ this line enables DaisyUI
   ],
+  darkMode: 'class', 
 }
