@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ManageVolunteers = () => {
+const ManageVolunteers = ({ darkMode }) => {
   const volunteers = [
     { id: 1, name: 'Sara Malik', email: 'sara@example.com', joined: '2024-05-01' },
     { id: 2, name: 'Hamza Yousuf', email: 'hamza@example.com', joined: '2024-05-10' },
@@ -9,18 +9,20 @@ const ManageVolunteers = () => {
   ];
 
   return (
-    <div className="bg-white rounded-lg shadow p-4 md:p-6 overflow-x-auto">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl md:text-2xl font-bold">Manage Volunteers</h2>
-        <button className="bg-teal-600 hover:bg-teal-700 text-white px-3 py-1 md:px-4 md:py-2 rounded text-sm">
+    <div className={`bg-white dark:bg-slate-800 rounded-lg shadow p-6`}>
+      <div className="flex justify-between items-center mb-6">
+        <h2 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-slate-800'}`}>
+          Manage Volunteers
+        </h2>
+        <button className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded text-sm">
           Add Volunteer
         </button>
       </div>
 
-      {/* Table Container with responsive overflow */}
+      {/* Table Container */}
       <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-slate-900">
+        <table className="min-w-full divide-y divide-gray-200 dark:divide-slate-700">
+          <thead className={`${darkMode ? 'bg-slate-700' : 'bg-slate-900'}`}>
             <tr>
               <th className="px-4 py-3 text-left text-xs md:text-sm font-medium text-white uppercase tracking-wider">
                 Name
@@ -36,24 +38,24 @@ const ManageVolunteers = () => {
               </th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
+          <tbody className={`${darkMode ? 'bg-slate-800 divide-slate-700' : 'bg-white divide-gray-200'}`}>
             {volunteers.map((v) => (
-              <tr key={v.id}>
-                <td className="px-4 py-3 whitespace-nowrap text-sm md:text-base">
+              <tr key={v.id} className={`${darkMode ? 'hover:bg-slate-700' : 'hover:bg-gray-50'}`}>
+                <td className={`px-4 py-3 whitespace-nowrap text-sm md:text-base ${darkMode ? 'text-slate-200' : 'text-gray-900'}`}>
                   {v.name}
                 </td>
-                <td className="px-4 py-3 whitespace-nowrap text-sm md:text-base">
+                <td className={`px-4 py-3 whitespace-nowrap text-sm md:text-base ${darkMode ? 'text-slate-300' : 'text-gray-600'}`}>
                   {v.email}
                 </td>
-                <td className="px-4 py-3 whitespace-nowrap text-sm md:text-base">
+                <td className={`px-4 py-3 whitespace-nowrap text-sm md:text-base ${darkMode ? 'text-slate-300' : 'text-gray-600'}`}>
                   {v.joined}
                 </td>
                 <td className="px-4 py-3 whitespace-nowrap text-sm md:text-base">
                   <div className="flex space-x-2">
-                    <button className="bg-teal-600 hover:bg-teal-700 text-white px-2 py-1 rounded text-xs md:text-sm">
+                    <button className="bg-teal-600 hover:bg-teal-700 text-white px-3 py-1 rounded text-xs md:text-sm">
                       Edit
                     </button>
-                    <button className="bg-red-600 hover:bg-red-700 text-white px-2 py-1 rounded text-xs md:text-sm">
+                    <button className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-xs md:text-sm">
                       Delete
                     </button>
                   </div>
@@ -64,19 +66,19 @@ const ManageVolunteers = () => {
         </table>
       </div>
 
-      {/* Pagination for when you have more data */}
-      <div className="mt-4 flex justify-between items-center">
-        <div className="text-sm text-gray-500">
+      {/* Pagination */}
+      <div className={`mt-4 flex justify-between items-center ${darkMode ? 'text-slate-300' : 'text-gray-600'}`}>
+        <div className="text-sm">
           Showing 1 to {volunteers.length} of {volunteers.length} entries
         </div>
         <div className="flex space-x-2">
-          <button className="px-3 py-1 border rounded text-sm disabled:opacity-50" disabled>
+          <button className={`px-3 py-1 border rounded text-sm ${darkMode ? 'border-slate-600 hover:bg-slate-700' : 'hover:bg-gray-100'}`} disabled>
             Previous
           </button>
-          <button className="px-3 py-1 border rounded text-sm bg-slate-900 text-white">
+          <button className={`px-3 py-1 rounded text-sm ${darkMode ? 'bg-slate-700 text-white' : 'bg-slate-900 text-white'}`}>
             1
           </button>
-          <button className="px-3 py-1 border rounded text-sm hover:bg-gray-100">
+          <button className={`px-3 py-1 border rounded text-sm ${darkMode ? 'border-slate-600 hover:bg-slate-700' : 'hover:bg-gray-100'}`}>
             Next
           </button>
         </div>

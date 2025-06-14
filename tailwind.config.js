@@ -6,6 +6,7 @@ module.exports = {
   theme: {
     extend: {},
   },
+  
   plugins: [
     require('daisyui'), // ✅ this line enables DaisyUI
   ],
