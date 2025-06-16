@@ -8,8 +8,10 @@ import ManageCases from './AdminPanel/ManageCases';
 import ManageDonations from './AdminPanel/ManageDonations';
 import ManageVolunteers from './AdminPanel/ManageVolunteers';
 import DashboardHome from './AdminPanel/DashboardHome';
-import DonorRegistration from './RegisterationLinks/DonorRegistration ';
 import { RegistrationPage } from './RegisterationLinks/RegistrationPage';
+import { RegistrationSuccess } from './RegisterationLinks/RegistrationSuccess';
+import DonationPage from './Donation/DonationPage';
+import DonationSuccess from './Donation/DonationSuccess';
 
 function App() {
   return (
@@ -24,8 +26,10 @@ function App() {
         <Route path='/urgent-cases' element={<ManageCases/>}/>
         <Route path='/donations' element={<ManageDonations/>}/>
         <Route path='/volunteers' element={<ManageVolunteers/>}/>
-     <Route path='/donor-registration' element={<DonorRegistration/>}/>
           <Route path='/registration' element={<RegistrationPage/>}/>
+          <Route path='/registration-success' element={<RegistrationSuccess/>}/>
+          <Route path='/donate' element={<DonationPage/>}/>
+          <Route path='/donation-success' element={<DonationSuccess/>}/>
       </Routes>
     </Router>
    

@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaChevronRight, FaChevronLeft, FaCheck, FaGlobeAmericas, FaHeartbeat, FaUserMd, FaUser, FaEnvelope, FaPhone, FaMapMarkerAlt, FaVenusMars, FaIdCard } from 'react-icons/fa';
 import { FaqSidebar } from './FaqSidebar';
-
+import { registerDonor } from '../services/apiService';
 export const RegistrationPage = () => {
-  const [currentStep, setCurrentStep] = useState(0);
+const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState({});
   const [showFaq, setShowFaq] = useState(false);
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
   const questions = [
     {
       id: 'personal',
@@ -221,7 +224,55 @@ export const RegistrationPage = () => {
              answers[currentQuestion.id]?.[field.id] !== '';
     });
   };
+  const handleCompleteRegistration = async () => {
+    setIsSubmitting(true);
+    setError(null);
 
+    try {
+      // Prepare the data for submission
+      const donorData = {
+        FullName: answers.personal?.fullName,
+        Email: answers.personal?.email,
+        PhoneNumber: answers.personal?.phone,
+        Gender: answers.demographics?.gender,
+        Age: answers.demographics?.age,
+        Ethnicity: answers.demographics?.ethnicity,
+        StreetAddress: answers.address?.street,
+        City: answers.address?.city,
+        StateProvince: answers.address?.state,
+        ZipPostalCode: answers.address?.zip,
+        Country: answers.address?.country,
+        HasHealthConditions: answers.health?.healthConditions === "Yes",
+        HealthConditionsDetails: answers.health?.healthConditions === "Yes" ? "User reported health conditions" : null,
+        BloodType: answers.health?.bloodType === "I don't know" ? null : answers.health?.bloodType,
+        WillingnessToDonate: answers.commitment?.willingness,
+        AgreedToIdVerification: answers.commitment?.idVerification || false
+      };
+
+      console.log('Submitting donor data:', donorData);
+      
+      // Call the API service
+      const response = await registerDonor(donorData);
+      console.log('Registration successful:', response);
+      
+      // Redirect to success page
+      navigate('/registration-success');
+    } catch (err) {
+      console.error('Registration error:', err);
+      
+      // Handle specific error cases
+      let errorMessage = 'Registration failed. Please try again.';
+      if (err.message.includes('Email address')) {
+        errorMessage = err.message;
+      } else if (err.message.includes('failed with status 500')) {
+        errorMessage = 'Server error. Please try again later.';
+      }
+      
+      setError(errorMessage);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
@@ -402,14 +453,28 @@ export const RegistrationPage = () => {
                     Next <FaChevronRight className="ml-1" />
                   </button>
                 ) : (
-                  <button
-                    type="button"
-                    onClick={() => console.log('Submission:', answers)}
-                    disabled={!allFieldsAnswered()}
-                    className={`flex items-center px-6 py-3 rounded-lg font-medium ${!allFieldsAnswered() ? 'bg-gray-300 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700 text-white'}`}
-                  >
-                    Complete Registration <FaChevronRight className="ml-1" />
-                  </button>
+                <button
+    type="button"
+    onClick={handleCompleteRegistration}
+    disabled={!allFieldsAnswered() || isSubmitting}
+    className={`flex items-center px-6 py-3 rounded-lg font-medium ${!allFieldsAnswered() || isSubmitting ? 'bg-gray-300 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700 text-white'}`}
+  >
+    {isSubmitting ? (
+      <>
+        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        Processing...
+      </>
+    ) : (
+      <>
+        Complete Registration <FaChevronRight className="ml-1" />
+      </>
+    )}
+  </button>
+
+
                 )}
               </div>
             </div>
