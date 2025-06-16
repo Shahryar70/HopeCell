@@ -20,6 +20,8 @@ const DonationPage = () => {
   });
 
   const [currentStep, setCurrentStep] = useState(1);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -30,10 +32,43 @@ const DonationPage = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Donation submitted:', formData);
-    navigate('/donation-success');
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/donations`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          amount: parseFloat(formData.amount),
+          isAnonymous: formData.anonymous
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Payment processing failed');
+      }
+
+      const data = await response.json();
+      
+      if (data.paymentUrl) {
+        // Redirect to payment gateway (Stripe)
+        window.location.href = data.paymentUrl;
+      } else {
+        // Direct to success page if no redirect needed (e.g., bank transfer)
+        navigate('/donation-success', { state: { donation: formData } });
+      }
+    } catch (err) {
+      setError(err.message || 'Payment processing failed. Please try again.');
+      console.error('Donation failed:', err);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const nextStep = () => setCurrentStep(prev => prev + 1);
@@ -42,6 +77,13 @@ const DonationPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
+        {/* Error Message */}
+        {error && (
+          <div className="mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+            {error}
+          </div>
+        )}
+
         {/* Progress Bar */}
         <div className="mb-8">
           <div className="flex justify-between mb-2">
@@ -78,6 +120,7 @@ const DonationPage = () => {
               handleSubmit={handleSubmit}
               nextStep={nextStep}
               prevStep={prevStep}
+              isSubmitting={isSubmitting}
             />
           </div>
         </div>
