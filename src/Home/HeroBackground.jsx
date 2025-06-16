@@ -12,7 +12,10 @@ const HeroBackground = ({ bgImage, bgMobile }) => {
         />
         <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center bg-black/50 text-white px-4">
           <h2 className="text-xl font-semibold mb-2 text-center">HopeCell: A Lifeline in Every Healing Cell</h2>
-          <button className="bg-red-600 px-4 py-2 rounded-3xl text-sm">Learn More</button>
+ <div className="flex-row gap-2">
+            <a className="bg-red-600  rounded-3xl px-4 py-2 cursor-pointer">Learn More</a>
+            <a className="bg-white  text-teal-700 px-4 py-2 rounded-3xl cursor-pointer">Get Support</a>
+          </div>
         </div>
       </div>
 

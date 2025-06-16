@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DonationForm from './DonationForm';
-
+import Header from '../Home/Header';
+import Footer from '../Home/Footer';
 const DonationPage = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -32,49 +33,61 @@ const DonationPage = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setError(null);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  setError(null);
 
-    try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/donations`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...formData,
-          amount: parseFloat(formData.amount),
-          isAnonymous: formData.anonymous
-        })
-      });
+  try {
+    const donationData = {
+      Name: formData.name,
+      Email: formData.email,
+      Phone: formData.phone,
+      Gender: formData.gender,
+      Address: formData.address,
+      City: formData.city,
+      Country: formData.country || "Pakistan",
+      Comment: formData.comment,
+      SpecialAppeal: formData.specialAppeal,
+      Amount: parseFloat(formData.amount),
+      PaymentMethod: formData.paymentMethod,
+      IsAnonymous: formData.anonymous
+    };
 
-      if (!response.ok) {
-        throw new Error('Payment processing failed');
-      }
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/donations`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(donationData)
+    });
 
-      const data = await response.json();
-      
-      if (data.paymentUrl) {
-        // Redirect to payment gateway (Stripe)
-        window.location.href = data.paymentUrl;
-      } else {
-        // Direct to success page if no redirect needed (e.g., bank transfer)
-        navigate('/donation-success', { state: { donation: formData } });
-      }
-    } catch (err) {
-      setError(err.message || 'Payment processing failed. Please try again.');
-      console.error('Donation failed:', err);
-    } finally {
-      setIsSubmitting(false);
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || 'Failed to save donation');
     }
-  };
+
+    // Directly navigate to success page since we're not processing payments
+    navigate('/donation-success', { 
+      state: { 
+        donation: formData,
+        message: "Thank you for your donation pledge! We'll contact you for payment details."
+      } 
+    });
+  } catch (err) {
+    setError(err.message);
+    console.error('Donation failed:', err);
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   const nextStep = () => setCurrentStep(prev => prev + 1);
   const prevStep = () => setCurrentStep(prev => prev - 1);
 
   return (
+    <>
+    <Header/>
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         {/* Error Message */}
@@ -126,6 +139,8 @@ const DonationPage = () => {
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

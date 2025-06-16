@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { FaChevronRight, FaChevronLeft, FaCheck, FaGlobeAmericas, FaHeartbeat, FaUserMd, FaUser, FaEnvelope, FaPhone, FaMapMarkerAlt, FaVenusMars, FaIdCard } from 'react-icons/fa';
 import { FaqSidebar } from './FaqSidebar';
 import { registerDonor } from '../services/apiService';
+import Header from '../Home/Header';
+import Footer from '../Home/Footer';
 export const RegistrationPage = () => {
 const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState({});
@@ -274,6 +276,8 @@ const [currentStep, setCurrentStep] = useState(0);
     }
   };
   return (
+    <>
+    <Header/>
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         {/* Progress Bar */}
@@ -485,5 +489,7 @@ const [currentStep, setCurrentStep] = useState(0);
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
