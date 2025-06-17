@@ -12,6 +12,8 @@ import { RegistrationPage } from './RegisterationLinks/RegistrationPage';
 import { RegistrationSuccess } from './RegisterationLinks/RegistrationSuccess';
 import DonationPage from './Donation/DonationPage';
 import DonationSuccess from './Donation/DonationSuccess';
+import About from './Pages/About';
+import Support from './Pages/Support';
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
           <Route path='/registration-success' element={<RegistrationSuccess/>}/>
           <Route path='/donate' element={<DonationPage/>}/>
           <Route path='/donation-success' element={<DonationSuccess/>}/>
+          <Route path='/about' element={<About/>}/>
+          <Route path='/support' element={<Support/>}/> 
       </Routes>
     </Router>
    
