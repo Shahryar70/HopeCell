@@ -50,128 +50,166 @@ const About = () => {
     <>
       <Header />
       
-      {/* Hero Banner with Swiper */}
-      <Swiper
-        modules={[Pagination, Navigation]}
-        spaceBetween={0}
-        slidesPerView={1}
-        pagination={{ clickable: true }}
-        navigation={{
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        }}
-        loop={true}
-        className="h-[500px]"
-      >
-        {[1, 2, 3].map((slide) => (
-          <SwiperSlide key={slide} className="relative">
-            <img 
-              src={`/hero-banner-${slide}.jpg`} 
-              alt={`HopeCell Banner ${slide}`}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-              <div className="text-center px-4 max-w-4xl">
-                <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                  <span className="text-red-400">Hope</span>Cell: Bridging Lives in Pakistan
-                </h1>
-                <p className="text-xl text-white mb-8">
-                  Revolutionizing blood cancer care through stem cell donor matching and holistic support
-                </p>
-                <Link 
-                  to="/register" 
-                  className="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-bold transition"
-                >
-                  Join Our Mission
-                </Link>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-        <div className="swiper-button-prev text-white">
-          <FaChevronLeft size={24} />
+   
+      
+   <div className="relative h-[500px] md:h-[600px] overflow-hidden">
+  {/* Hero Image */}
+  <img 
+    src="/Assets/Images/Home/Hero4.png" 
+    alt="HopeCell - Supporting Blood Cancer Patients"
+    className="w-full h-full object-cover object-center"
+  />
+  
+  {/* Overlay with gradient */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30">
+    {/* Content Container - Centered */}
+    <div className="container mx-auto h-full flex items-center justify-center px-4 sm:px-6 lg:px-8">
+      <div className="text-center max-w-4xl">
+        {/* Organization Name */}
+        <div className="mb-4">
+          <span className="text-white text-lg font-semibold tracking-wider">
+            HOPECELL FOUNDATION
+          </span>
         </div>
-        <div className="swiper-button-next text-white">
-          <FaChevronRight size={24} />
+        
+        {/* Main Heading */}
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+          <span className="text-red-600">Hope</span>Cell: 
+          <span className="block mt-2">Bridging Lives in Pakistan</span>
+        </h1>
+        
+        {/* Subheading */}
+        <p className="text-lg md:text-xl text-white mb-8 max-w-3xl mx-auto">
+          Revolutionizing blood cancer care through stem cell donor matching, 
+          financial support, and breaking cultural barriers
+        </p>
+        
+        {/* Single CTA Button - Centered */}
+        <div className="flex justify-center">
+          <Link 
+            to="/register" 
+            className="px-8 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg"
+          >
+            Join Our Mission
+          </Link>
         </div>
-      </Swiper>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Crisis Section */}
-        <section className="mb-16 bg-white shadow-xl rounded-2xl overflow-hidden">
-          <div className="grid md:grid-cols-2">
-            <div className="p-8 md:p-12">
-              <h2 className="text-3xl font-bold text-red-600 mb-6">The Blood Cancer Crisis in Pakistan</h2>
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="bg-red-100 text-red-800 rounded-full p-3 mr-4 flex-shrink-0">
-                    <span className="text-xl font-bold">72%</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg">Lack of Matched Donors</h3>
-                    <p className="text-gray-600">
-                      Pakistani patients cannot find family matches, needing unrelated donors
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="bg-red-100 text-red-800 rounded-full p-3 mr-4 flex-shrink-0">
-                    <span className="text-xl font-bold">3x</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg">Higher Mortality</h3>
-                    <p className="text-gray-600">
-                      Blood cancer death rates compared to developed nations
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="bg-red-100 text-red-800 rounded-full p-3 mr-4 flex-shrink-0">
-                    <span className="text-xl font-bold">0.01%</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg">Registry Participation</h3>
-                    <p className="text-gray-600">
-                      Of population in stem cell registries vs 2% in West
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-red-600 text-white p-8 md:p-12 flex flex-col justify-center">
-              <div className="mb-6">
-                <h3 className="text-2xl font-bold mb-4">Cultural Barriers We Address</h3>
-                <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <span className="bg-white text-red-600 rounded-full p-1 mr-3 mt-1 flex-shrink-0">
-                      ✓
-                    </span>
-                    <span>Fatwas from Islamic scholars endorsing donation</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="bg-white text-red-600 rounded-full p-1 mr-3 mt-1 flex-shrink-0">
-                      ✓
-                    </span>
-                    <span>Community workshops in local languages</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="bg-white text-red-600 rounded-full p-1 mr-3 mt-1 flex-shrink-0">
-                      ✓
-                    </span>
-                    <span>Female donor advocacy programs</span>
-                  </li>
-                </ul>
-              </div>
-              <img 
-                src="/images/fatwa-certificate.jpg" 
-                alt="Islamic Fatwa Certificate"
-                className="rounded-lg border-2 border-white"
-              />
-            </div>
+    {/* Crisis Section - Improved Design */}
+<section className="mb-16 bg-white shadow-lg rounded-3xl overflow-hidden border border-gray-100">
+  <div className="grid md:grid-cols-2 gap-0">
+    {/* Left Column - Statistics */}
+    <div className="p-8 md:p-10 bg-gray-50">
+      <h2 className="text-3xl font-bold text-red-600 mb-8 relative pb-4">
+        The Blood Cancer Crisis in Pakistan
+        <span className="absolute bottom-0 left-0 w-16 h-1 bg-red-600 rounded-full"></span>
+      </h2>
+      
+      <div className="space-y-8">
+        <div className="flex items-start bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-red-100 text-red-800 rounded-lg p-4 mr-5 flex-shrink-0 text-center min-w-[80px]">
+            <span className="text-2xl font-bold block">72%</span>
           </div>
-        </section>
+          <div>
+            <h3 className="font-semibold text-lg text-gray-800 mb-2">Lack of Matched Donors</h3>
+            <p className="text-gray-600">
+              Pakistani patients cannot find family matches, needing unrelated donors
+            </p>
+          </div>
+        </div>
+        
+        <div className="flex items-start bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-red-100 text-red-800 rounded-lg p-4 mr-5 flex-shrink-0 text-center min-w-[80px]">
+            <span className="text-2xl font-bold block">3x</span>
+          </div>
+          <div>
+            <h3 className="font-semibold text-lg text-gray-800 mb-2">Higher Mortality Rate</h3>
+            <p className="text-gray-600">
+              Blood cancer death rates compared to developed nations
+            </p>
+          </div>
+        </div>
+        
+        <div className="flex items-start bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-red-100 text-red-800 rounded-lg p-4 mr-5 flex-shrink-0 text-center min-w-[80px]">
+            <span className="text-2xl font-bold block">0.01%</span>
+          </div>
+          <div>
+            <h3 className="font-semibold text-lg text-gray-800 mb-2">Registry Participation</h3>
+            <p className="text-gray-600">
+              Of population in stem cell registries vs 2% in Western countries
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Right Column - Cultural Solutions */}
+    <div className="bg-gradient-to-br from-red-600 to-red-700 text-white p-8 md:p-10 flex flex-col">
+      <div className="mb-8">
+        <h3 className="text-2xl font-bold mb-6 relative pb-4">
+          Breaking Cultural Barriers
+          <span className="absolute bottom-0 left-0 w-16 h-1 bg-white rounded-full"></span>
+        </h3>
+        
+        <ul className="space-y-5">
+          <li className="flex items-start bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+            <span className="bg-white text-red-600 rounded-full p-2 mr-4 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+            </span>
+            <div>
+              <h4 className="font-semibold text-lg">Religious Endorsements</h4>
+              <p className="text-red-100">Fatwas from Islamic scholars supporting donation</p>
+            </div>
+          </li>
+          
+          <li className="flex items-start bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+            <span className="bg-white text-red-600 rounded-full p-2 mr-4 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+            </span>
+            <div>
+              <h4 className="font-semibold text-lg">Local Language Outreach</h4>
+              <p className="text-red-100">Community workshops in Urdu, Pashto, and Sindhi</p>
+            </div>
+          </li>
+          
+          <li className="flex items-start bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+            <span className="bg-white text-red-600 rounded-full p-2 mr-4 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+            </span>
+            <div>
+              <h4 className="font-semibold text-lg">Women's Participation</h4>
+              <p className="text-red-100">Female donor advocacy and education programs</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      
+      <div className="mt-auto">
+        <img 
+          src="/images/fatwa-certificate.jpg" 
+          alt="Islamic Fatwa Certificate"
+          className="rounded-lg border-2 border-white/30 w-full object-cover h-48 md:h-56"
+        />
+        <p className="text-center text-red-100 text-sm mt-2">
+          Official endorsement from religious authorities
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* Our Solutions */}
         <section className="mb-16">
