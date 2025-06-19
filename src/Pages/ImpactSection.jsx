@@ -45,31 +45,40 @@ const ImpactSection = () => {
 </div>
 
         {/* RIGHT: Cultural Awareness */}
-        <div className="bg-red-50 rounded-2xl p-8 md:p-10 shadow-md">
-          <h3 className="text-2xl font-semibold text-red-700 mb-6">
-            Cultural Awareness & Progress
-          </h3>
+     <div className="bg-red-50 rounded-2xl p-8 md:p-10 shadow-md">
+  <h3 className="text-2xl font-semibold text-red-700 mb-6">
+    Cultural Awareness & Progress
+  </h3>
 
-          <ul className="space-y-5">
-            <FeatureItem
-              icon={<FaHeart className="text-red-600 text-xl" />}
-              title="Religious Endorsements"
-              desc="Fatwas from trusted scholars encourage stem cell donation."
-            />
-            <FeatureItem
-              icon={<FaLanguage className="text-red-600 text-xl" />}
-              title="Local Language Advocacy"
-              desc="Educational programs in Urdu, Pashto, and Sindhi."
-            />
-            <FeatureItem
-              icon={<FaUsers className="text-red-600 text-xl" />}
-              title="Women's Participation"
-              desc="Empowering female voices in donation drives."
-            />
-          </ul>
+  <ul className="space-y-5">
+    <FeatureItem
+      icon={<FaHeart className="text-red-600 text-xl" />}
+      title="Religious Endorsements"
+      desc="Fatwas from trusted scholars encourage stem cell donation."
+    />
+    <FeatureItem
+      icon={<FaLanguage className="text-red-600 text-xl" />}
+      title="Local Language Advocacy"
+      desc="Educational programs in Urdu, Pashto, and Sindhi."
+    />
+    <FeatureItem
+      icon={<FaUsers className="text-red-600 text-xl" />}
+      title="Women's Participation"
+      desc="Empowering female voices in donation drives."
+    />
+  </ul>
 
-   
-        </div>
+  {/* PDF Download Button */}
+  <div className="mt-8 text-center">
+    <a
+      href="/Assets/Images/Documents/Fatwa_Hopecell.pdf"
+      download
+      className="inline-block px-6 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition"
+    >
+      Download Fatwa Certificate (PDF)
+    </a>
+  </div>
+</div>
       </div>
            
     </section>
