@@ -8,6 +8,8 @@ import 'swiper/css/pagination';
 
 const UrgentNeeds = () => {
   const [urgentCases, setUrgentCases] = useState([]);
+     const [canSlideNext, setCanSlideNext] = useState(true);
+    const [canSlidePrev, setCanSlidePrev] = useState(false);
    const apiUrl = process.env.REACT_APP_API_URL;
 useEffect(() => {
   const fetchCases = async () => {
@@ -54,7 +56,10 @@ useEffect(() => {
       </div>
     </div>
   );
-
+  const handleSlideChange = (swiper) => {
+    setCanSlidePrev(!swiper.isBeginning);
+    setCanSlideNext(!swiper.isEnd);
+  };
   return (
     <section className="py-8 bg-teal-50">
       <div className="container mx-auto px-4">
@@ -66,6 +71,7 @@ useEffect(() => {
         {/* Swiper Carousel */}
         <Swiper
           modules={[Pagination, Navigation]}
+            onSlideChange={handleSlideChange}
           navigation={{
             nextEl: '.swiper-button-next-custom',
             prevEl: '.swiper-button-prev-custom'
@@ -87,16 +93,25 @@ useEffect(() => {
         </Swiper>
 
         {/* Custom Navigation Buttons */}
-        <div className="flex justify-end gap-6 mt-4">
-          <button className="swiper-button-prev-custom flex items-center gap-2 p-2 rounded-full hover:text-gray-900 text-sm text-gray-700">
-            <FaChevronLeft />
-            <span>Prev</span>
-          </button>
-          <button className="swiper-button-next-custom flex items-center gap-2 p-2 rounded-full hover:text-gray-900 text-sm text-gray-700">
-            <span>Next</span>
-            <FaChevronRight />
-          </button>
-        </div>
+      <div className="flex justify-end gap-6 mt-4">
+               <button
+                 className={`swiper-button-prev-custom flex items-center gap-2 p-2 rounded-full text-base transition ${
+                   canSlidePrev ? 'font-bold text-gray-900' : 'text-gray-400'
+                 }`}
+               >
+                 <FaChevronLeft />
+                 <span>Prev</span>
+               </button>
+     
+               <button
+                 className={`swiper-button-next-custom flex items-center gap-2 p-2 rounded-full text-base transition ${
+                   canSlideNext ? 'font-bold text-gray-900' : 'text-gray-400'
+                 }`}
+               >
+                 <span>Next</span>
+                 <FaChevronRight />
+               </button>
+             </div>
       </div>
     </section>
   );
