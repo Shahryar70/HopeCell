@@ -1,12 +1,19 @@
-import React from 'react'
+import {React, useState} from 'react';
 import { FaUniversity,FaWhatsapp,FaMobileAlt,FaHandHoldingMedical, FaBookMedical,FaAmbulance,FaHotel,
     FaUserNurse,FaUsers,FaHandshake,FaBullhorn,FaSchool,FaChevronLeft,FaArrowRight,FaChevronRight, 
     FaNetworkWired} from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
-const SolutionsSlider = () => {
 
+const SolutionsSlider = () => {
+ const [swiperRef, setSwiperRef] = useState(null);
+    const [canSlidePrev, setCanSlidePrev] = useState(false);
+    const [canSlideNext, setCanSlideNext] = useState(true);
   
+    const updateNavState = (swiper) => {
+      setCanSlidePrev(swiper.isBeginning === false);
+      setCanSlideNext(swiper.isEnd === false);
+    };
   const solutions = [
   {
     title: "Donor Network",
@@ -69,6 +76,8 @@ const SolutionsSlider = () => {
 
     <Swiper
       modules={[Pagination, Navigation]}
+          onSwiper={(swiper) => setSwiperRef(swiper)}
+          onSlideChange={(swiper) => updateNavState(swiper)}
       pagination={{ clickable: true }}
       navigation={{
         nextEl: '.swiper-button-next-custom',
@@ -116,16 +125,28 @@ const SolutionsSlider = () => {
 
     {/* Navigation Buttons */}
     <div className="flex justify-end gap-6 mt-4">
-      <button className="swiper-button-prev-custom flex items-center gap-2 p-2 rounded-full hover:text-gray-900 text-sm text-gray-700">
-        <FaChevronLeft />
-        <span>Prev</span>
-      </button>
+          <button
+            className={`swiper-button-prev-values flex items-center gap-2 p-2 rounded-full text-base transition ${
+              canSlidePrev ? 'font-bold text-gray-900' : 'text-gray-400'
+            }`}
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            <span>Prev</span>
+          </button>
 
-      <button className="swiper-button-next-custom flex items-center gap-2 p-2 rounded-full hover:text-gray-900 text-sm text-gray-700">
-        <span>Next</span>
-        <FaChevronRight />
-      </button>
-    </div>
+          <button
+            className={`swiper-button-next-values flex items-center gap-2 p-2 rounded-full text-base transition ${
+              canSlideNext ? 'font-bold text-gray-900' : 'text-gray-400'
+            }`}
+          >
+            <span>Next</span>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
   </div>
 </section>
 </>

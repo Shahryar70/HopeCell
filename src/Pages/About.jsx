@@ -9,6 +9,8 @@ import 'swiper/css/pagination';
 import SolutionsSlider from './SolutionsSlider';
 import ImpactSection from './ImpactSection';
 import Testimonials from '../Home/Testimonials';
+import DonorCTA from '../Home/DonorCTA';
+import OurValues from './OurValues';
 const About = () => {
 
 
@@ -17,7 +19,7 @@ const About = () => {
   return (
     <>
       <Header />
-         
+         <div className='bg-white'>
    <div className="relative h-[60vh]  overflow-hidden">
   {/* Hero Image */}
   <img 
@@ -50,13 +52,13 @@ const About = () => {
   </div>
 </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    {/* Crisis Section - Improved Design */}
-<ImpactSection/>
+      <ImpactSection/>
     <SolutionsSlider/>    
-  <Testimonials/>
-
+    <OurValues/>
+        <Testimonials/>
+      <DonorCTA/>
       </div>
+      
       <Footer />
     </>
   );

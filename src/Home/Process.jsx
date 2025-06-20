@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useState} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
 import { BiUserPlus, BiTestTube, BiDna, BiHeart, BiCalendarCheck } from 'react-icons/bi';
@@ -7,6 +7,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 const Process = () => {
+   const [canSlideNext, setCanSlideNext] = useState(true);
+  const [canSlidePrev, setCanSlidePrev] = useState(false);
   const steps = [
     {
       icon: <BiUserPlus className="text-white" size={32} />,
@@ -40,10 +42,15 @@ const Process = () => {
       bgImage: "url('/Assets/Images/Home/Process5.png')"
     }
   ];
+  const handleSlideChange = (swiper) => {
+    setCanSlidePrev(!swiper.isBeginning);
+    setCanSlideNext(!swiper.isEnd);
+  };
 
   return (
     <section className="py-8 bg-white">
-      <h2 className="text-4xl font-extrabold text-center mb-4">How HopeCell Works</h2>
+     
+      <h2 className="text-4xl font-extrabold text-center mb-4">How <span className='text-red-600'>HopeCell</span> Works</h2>
       <p className="text-center mb-12 max-w-2xl mx-auto text-gray-600">
         From registration to life-saving donation - your journey matters
       </p>
@@ -51,6 +58,7 @@ const Process = () => {
       <div className="px-4">
        <Swiper
           modules={[Pagination, Navigation]}
+                    onSlideChange={handleSlideChange}
           pagination={{ clickable: true }}
           navigation={{
             nextEl: '.swiper-button-next-custom',
@@ -96,21 +104,25 @@ const Process = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-<div className="flex justify-end gap-6 mt-4">
-  {/* Prev */}
-  <button className="swiper-button-prev-custom flex items-center gap-2 p-2 rounded-full hover:text-gray-900 text-sm text-gray-700">
-    <FaChevronLeft />
-    <span>Prev</span>
-  </button>
+ <div className="flex justify-end gap-6 mt-4">
+          <button
+            className={`swiper-button-prev-custom flex items-center gap-2 p-2 rounded-full text-base transition ${
+              canSlidePrev ? 'font-bold text-gray-900' : 'text-gray-400'
+            }`}
+          >
+            <FaChevronLeft />
+            <span>Prev</span>
+          </button>
 
-  {/* Next */}
-  <button className="swiper-button-next-custom flex items-center gap-2 p-2 rounded-full hover:text-gray-900 text-sm text-gray-700">
-    <span>Next</span>
-    <FaChevronRight />
-  </button>
-</div>
-
-
+          <button
+            className={`swiper-button-next-custom flex items-center gap-2 p-2 rounded-full text-base transition ${
+              canSlideNext ? 'font-bold text-gray-900' : 'text-gray-400'
+            }`}
+          >
+            <span>Next</span>
+            <FaChevronRight />
+          </button>
+        </div>
       </div>
     </section>
   );

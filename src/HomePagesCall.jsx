@@ -8,6 +8,7 @@ import Testimonials from './Home/Testimonials';
 import TreatmentSupport from './Home/TreatmentSupport';
 import DonorCTA from './Home/DonorCTA';
 import Footer from './Home/Footer';
+import FAQSection from './Home/FAQSection';
 const HomePagesCall = () => {
   return (
     <div>
@@ -18,7 +19,9 @@ const HomePagesCall = () => {
      <Testimonials/>
       <TreatmentSupport/>
      <UrgentNeeds/>
+        <FAQSection/>
        <DonorCTA/>
+    
        <Footer/>
     </div>
   )

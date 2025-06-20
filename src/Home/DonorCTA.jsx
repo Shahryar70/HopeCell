@@ -9,12 +9,12 @@ const DonorCTA = () => {
           Joining our donor registry takes just 5 minutes
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <button className="px-8 py-3 bg-white text-teal-700 font-bold rounded-full hover:bg-gray-100">
+          <a href='/registration' className="px-8 py-3 bg-white text-teal-700 font-bold rounded-full hover:bg-gray-100">
             Register Now
-          </button>
-          <button className="px-8 py-3 border-2 border-white text-white font-bold rounded-full hover:bg-white/10">
+          </a>
+          <a className="px-8 py-3 border-2 border-white text-white font-bold rounded-full hover:bg-white/10">
             How Donation Works
-          </button>
+          </a>
         </div>
       </div>
     </section></div>

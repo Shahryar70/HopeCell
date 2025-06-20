@@ -58,7 +58,7 @@ useEffect(() => {
   return (
     <section className="py-8 bg-teal-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-extrabold text-center mb-4">Urgent Cases Needing Help</h2>
+        <h2 className="text-4xl font-extrabold text-center mb-4"><span className='text-red-600'>Urgent Cases</span> Needing Help</h2>
         <p className="text-center mb-12 max-w-2xl mx-auto text-gray-600">
           Real patients who need support today
         </p>

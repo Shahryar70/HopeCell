@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useState} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
 import { FaHandHoldingUsd, FaHospitalSymbol, FaUserNurse, FaShareAlt, FaArrowRight} from 'react-icons/fa';
@@ -9,6 +9,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const TreatmentSupport = () => {
+     const [canSlideNext, setCanSlideNext] = useState(true);
+    const [canSlidePrev, setCanSlidePrev] = useState(false);
   const resources = [
     {
       title: "Financial Aid",
@@ -32,12 +34,15 @@ const TreatmentSupport = () => {
 }
 
   ];
-
+  const handleSlideChange = (swiper) => {
+    setCanSlidePrev(!swiper.isBeginning);
+    setCanSlideNext(!swiper.isEnd);
+  };
   return (
     <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center mb-8 flex-col md:flex-row gap-4">
-          <h2 className="text-4xl font-extrabold text-gray-900">Support our Mission</h2>
+          <h2 className="text-4xl font-extrabold text-gray-900">Support our <span className='text-red-600'>Mission</span></h2>
           <p className="text-gray-600 max-w-lg border-l-2 border-red-500 pl-4">
 HopeCell: A trusted lifeline in every stem cell of hope
           </p>
@@ -45,6 +50,7 @@ HopeCell: A trusted lifeline in every stem cell of hope
 
         <Swiper
           modules={[Pagination, Navigation]}
+                    onSlideChange={handleSlideChange}
           pagination={{ clickable: true }}
           navigation={{
             nextEl: '.swiper-button-next-custom',
@@ -73,17 +79,25 @@ HopeCell: A trusted lifeline in every stem cell of hope
         </Swiper>
 
         {/* Navigation Buttons */}
-        <div className="flex justify-end gap-6 mt-4">
-          <button className="swiper-button-prev-custom flex items-center gap-2 p-2 rounded-full hover:text-gray-900 text-sm text-gray-700">
-            <FaChevronLeft />
-            <span>Prev</span>
-          </button>
-
-          <button className="swiper-button-next-custom flex items-center gap-2 p-2 rounded-full hover:text-gray-900 text-sm text-gray-700">
-            <span>Next</span>
-            <FaChevronRight />
-          </button>
-        </div>
+   <div className="flex justify-end gap-6 mt-4">
+            <button
+              className={`swiper-button-prev-custom flex items-center gap-2 p-2 rounded-full text-base transition ${
+                canSlidePrev ? 'font-bold text-gray-900' : 'text-gray-400'
+              }`}
+            >
+              <FaChevronLeft />
+              <span>Prev</span>
+            </button>
+  
+            <button
+              className={`swiper-button-next-custom flex items-center gap-2 p-2 rounded-full text-base transition ${
+                canSlideNext ? 'font-bold text-gray-900' : 'text-gray-400'
+              }`}
+            >
+              <span>Next</span>
+              <FaChevronRight />
+            </button>
+          </div>
       </div>
     </section>
   );

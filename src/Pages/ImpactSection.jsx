@@ -3,7 +3,7 @@ import { FaHeart, FaLanguage, FaUsers,FaUserTimes,FaChartLine } from 'react-icon
 const ImpactSection = () => {
   return (
     <>
-    <section className="bg-white py-8 md:px-8 lg:px-8">
+    <section className="bg-white py-8  max-w-6xl mx-auto ">
           <h2 className="text-3xl text-center md:text-4xl font-bold text-gray-800 mb-2">
             <span className='text-red-600'>Blood Cancer</span> Crisis in Pakistan          </h2>
           <p className="text-gray-600 mb-6 text-base text-center md:text-lg leading-relaxed">

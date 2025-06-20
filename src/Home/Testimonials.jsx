@@ -22,7 +22,7 @@ const Testimonials = () => {
     ];
   return (
 <section className="py-12 bg-teal-50">
-      <h2 className="text-4xl font-extrabold text-center mb-2">Voices of Hope</h2>
+      <h2 className="text-4xl font-extrabold text-center mb-2">Voices of <span className='text-red-600'>Hope</span></h2>
       <p className="text-center mb-12">Real stories from our community</p>
 
       <Swiper
