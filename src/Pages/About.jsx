@@ -51,11 +51,10 @@ const About = () => {
     </div>
   </div>
 </div>
-
       <ImpactSection/>
+         <OurValues/>
     <SolutionsSlider/>    
-    <OurValues/>
-        <Testimonials/>
+         <Testimonials/>
       <DonorCTA/>
       </div>
       

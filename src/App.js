@@ -14,6 +14,8 @@ import DonationPage from './Donation/DonationPage';
 import DonationSuccess from './Donation/DonationSuccess';
 import About from './Pages/About';
 import Support from './Pages/Support';
+import GetInvolved from './GetInvolved/GetInvolved';
+import VolunteerFormPage from './GetInvolved/VolunteerFormPage';
 
 function App() {
   return (
@@ -21,6 +23,10 @@ function App() {
         <Router>
       <Routes>
          <Route path="/" element={<HomePagesCall />} />
+         <Route path='/get-involved' element={<GetInvolved/>}/>
+                <Route path='/about' element={<About/>}/>
+          <Route path='/support' element={<Support/>}/> 
+          <Route path='/volunteer-page' element={<VolunteerFormPage/>}/>
          {/* Admin Panel Routes */}
         <Route path="/login" element={<HopeCellLogin />} />
         <Route path='/admin' element={<AdminDashboard/>}/>
@@ -32,8 +38,7 @@ function App() {
           <Route path='/registration-success' element={<RegistrationSuccess/>}/>
           <Route path='/donate' element={<DonationPage/>}/>
           <Route path='/donation-success' element={<DonationSuccess/>}/>
-          <Route path='/about' element={<About/>}/>
-          <Route path='/support' element={<Support/>}/> 
+   
       </Routes>
     </Router>
    

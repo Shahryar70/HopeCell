@@ -19,26 +19,26 @@ export const Navbar = ({ withTop = false }) => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6">
-          <a href="/" className="text-base font-semibold hover:text-red-600 transition-colors">
+          <a href="/" className="text-base uppercase font-semibold hover:text-red-600 transition-colors">
             HOME
           </a>
-          <a href="/patients" className="text-base font-semibold hover:text-red-600 transition-colors">
+          <a href="/patients" className="text-base uppercase font-semibold hover:text-red-600 transition-colors">
             FOR PATIENTS
           </a>
-          <a href="/donors" className="text-base font-semibold hover:text-red-600 transition-colors">
+          <a href="/donors" className="text-base uppercase font-semibold hover:text-red-600 transition-colors">
             FOR DONORS
           </a>
-          <a href="/resources" className="text-base font-semibold hover:text-red-600 transition-colors">
-            RESOURCES
+          <a href="/get-involved" className="text-base  uppercase font-semibold hover:text-red-600 transition-colors">
+          GET Involved
           </a>
-          <a href="/about" className="text-base font-semibold hover:text-red-600 transition-colors">
+          <a href="/about" className="text-base uppercase font-semibold hover:text-red-600 transition-colors">
             ABOUT US
           </a>
           
           {/* Support Dropdown - Fixed */}
           <div className="relative group">
             <button 
-              className="text-base font-semibold hover:text-red-600 flex items-center gap-1"
+              className="text-base uppercase font-semibold hover:text-red-600 flex items-center gap-1"
               onMouseEnter={() => setSupportDropdownOpen(true)}
               onMouseLeave={() => setSupportDropdownOpen(false)}
             >
@@ -66,7 +66,7 @@ export const Navbar = ({ withTop = false }) => {
           {/* Action Button */}
           <a 
             href="/registration" 
-            className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-full text-sm font-semibold transition-colors"
+            className="bg-red-600 uppercase hover:bg-red-700 text-white px-4 py-2 rounded-full text-sm font-semibold transition-colors"
           >
             JOIN DONOR REGISTRY
           </a>
