@@ -16,21 +16,19 @@ const VolunteerFormPage = () => {
     <>
     <Header/>
     <div className="bg-gray-50">
-      {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-red-50 to-teal-50">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white shadow-md mb-6">
-            <FaHandsHelping className="text-red-600 text-3xl" />
-          </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Join Our <span className="text-red-600">Volunteer</span> Network
-          </h1>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            Your time and skills can help save lives. Become part of our mission today.
-          </p>
-        </div>
-      </section>
-
+  
+ <div className="container pt-12 mx-auto h-full flex items-center justify-center px-4 sm:px-6 lg:px-8">
+      <div className="text-center max-w-4xl">
+          
+        {/* Main Heading */}
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight">
+  Join Our <span className="text-red-600">Volunteer</span> Network</h1>       
+        {/* Subheading */}
+        <p className="text-lg md:text-xl text-gray-800 mb-2 max-w-3xl mx-auto">
+        Your time and skills can help save lives. Fill the Application and become part of our mission today.
+        </p>
+      </div>
+    </div>
       {/* Conditional Rendering */}
       {isSubmitted ? (
         <VolunteerSuccess />

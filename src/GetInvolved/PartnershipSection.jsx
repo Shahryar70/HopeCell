@@ -117,9 +117,9 @@ const PartnershipSection = () => {
 
         {/* CTA Button */}
         <div className="text-center mt-4">
-          <button className="bg-teal-600 hover:bg-teal-700 text-white font-medium py-3 px-8 rounded-md transition text-lg">
+          <a href='/partner-us' className="bg-teal-600 hover:bg-teal-700 text-white font-medium py-3 px-8 rounded-md transition text-lg">
             Become a Partner
-          </button>
+          </a>
         </div>
       </div>
     </section>

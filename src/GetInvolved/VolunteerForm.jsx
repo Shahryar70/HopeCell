@@ -76,7 +76,7 @@ const VolunteerForm = ({ onSubmitSuccess }) => {
     };
 
     return (
-        <section className="py-16">
+        <section className="pb-8 pt-4">
             <div className="max-w-6xl mx-auto px-4">
                 <div className="flex flex-col lg:flex-row gap-12">
                     {/* Information Side */}
