@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { FaHandsHelping } from 'react-icons/fa';
 import VolunteerForm from './VolunteerForm';
 import VolunteerSuccess from './VolunteerSuccess';
+import Header from '../Home/Header';
+import Footer from '../Home/Footer';
 
 const VolunteerFormPage = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -11,7 +13,8 @@ const VolunteerFormPage = () => {
   };
 
   return (
-    
+    <>
+    <Header/>
     <div className="bg-gray-50">
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-r from-red-50 to-teal-50">
@@ -35,6 +38,8 @@ const VolunteerFormPage = () => {
         <VolunteerForm onSubmitSuccess={handleSubmitSuccess} />
       )}
     </div>
+    <Footer/>
+    </>
   );
 };
 
