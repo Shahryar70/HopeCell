@@ -11,6 +11,7 @@ const VolunteerFormPage = () => {
   };
 
   return (
+    
     <div className="bg-gray-50">
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-r from-red-50 to-teal-50">

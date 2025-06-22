@@ -252,7 +252,7 @@ const VolunteerForm = ({ onSubmitSuccess }) => {
                                     <label className="block text-sm font-medium text-gray-700 mb-2">
                                         Availability <span className="text-red-500">*</span>
                                     </label>
-                                    <div className="grid grid-cols-2 gap-4">
+                                    <div className="grid grid-cols-3 gap-2">
                                         {['Weekdays', 'Weekends', 'Mornings', 'Afternoons', 'Evenings', 'Flexible'].map((option) => (
                                             <div key={option} className="flex items-center">
                                                 <input
@@ -276,7 +276,7 @@ const VolunteerForm = ({ onSubmitSuccess }) => {
                                     <label className="block text-sm font-medium text-gray-700 mb-2">
                                         Areas of Interest <span className="text-red-500">*</span>
                                     </label>
-                                    <div className="space-y-2">
+                                    <div className="grid grid-cols-3 gap-2">
                                         {[
                                             'Awareness Campaigns',
                                             'Donor Drives',
@@ -336,7 +336,7 @@ const VolunteerForm = ({ onSubmitSuccess }) => {
                                     </div>
                                 </div>
 
-                                <div className="pt-4">
+                                <div className="pt-0">
                                     <button
                                         type="submit"
                                         disabled={isSubmitting}
