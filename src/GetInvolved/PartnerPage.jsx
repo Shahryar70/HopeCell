@@ -1,10 +1,9 @@
 import Footer from "../Home/Footer";
 import Header from "../Home/Header";
 import PartnerBenefits from "./PartnerBenefits";
-import PartnershipSection from "./PartnershipSection";
 import PartnerUsForm from "./PartnerUsForm";
 import {React, useState} from "react";
-
+import SuccessPartner from "./SuccessPartner";
 const PartnerPage = () => {
   const [formData, setFormData] = useState({
     orgName: '',
@@ -91,7 +90,7 @@ const PartnerPage = () => {
   };
 
   if (isSubmitted) {
-    return <PartnershipSection onReset={() => setIsSubmitted(false)} />;
+    return <SuccessPartner onReset={() => setIsSubmitted(false)} />;
   }
 
   return (
