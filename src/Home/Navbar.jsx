@@ -108,7 +108,7 @@ export const Navbar = ({ withTop = false }) => {
               <a href="/" className="block py-3 text-lg font-medium hover:text-red-600 border-b border-gray-100">Home</a>
               <a href="/patients" className="block py-3 text-lg font-medium hover:text-red-600 border-b border-gray-100">For Patients</a>
               <a href="/donors" className="block py-3 text-lg font-medium hover:text-red-600 border-b border-gray-100">For Donors</a>
-              <a href="/resources" className="block py-3 text-lg font-medium hover:text-red-600 border-b border-gray-100">Resources</a>
+              <a href="/get-involved" className="block py-3 text-lg font-medium hover:text-red-600 border-b border-gray-100">Get Involved</a>
               <a href="/about" className="block py-3 text-lg font-medium hover:text-red-600 border-b border-gray-100">About Us</a>
               
               {/* Support Accordion */}
