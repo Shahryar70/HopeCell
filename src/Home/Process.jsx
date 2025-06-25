@@ -94,7 +94,7 @@ const Process = () => {
                     <p className="mt-2">{step.desc}</p>
 
                     {i === steps.length - 1 && (
-                      <a className="mt-2 inline-flex items-center px-4 py-1.5 rounded-full bg-teal-600 hover:bg-teal-700 text-white text-sm font-medium shadow-sm transition-colors">
+                      <a className="w-3/4 md:w-2/4 lg:w-2/4 mt-2 inline-flex items-center px-4 py-1.5 rounded-full bg-teal-600 hover:bg-teal-700 text-white text-sm font-medium shadow-sm transition-colors">
                         Start Registration
                       </a>
                     )}
