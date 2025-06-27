@@ -35,7 +35,7 @@ HopeCell provides emotional, logistical, and financial support to patients and f
   </div>
 </div>
     <div className="max-w-6xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold text-teal-800 mb-8">Patient Support</h1>
+      <h1 className="text-3xl text-center font-bold text-teal-800 mb-8">Patient Support</h1>
       
       <div className="grid md:grid-cols-2 gap-8">
         <div className="bg-gray-50 p-6 rounded-lg">
