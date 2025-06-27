@@ -26,8 +26,7 @@ const Support = () => {
 
   {/* Subheading */}
   <p className="text-lg md:text-xl text-white mb-6 max-w-3xl mx-auto">
-    Revolutionizing blood cancer care through stem cell donor matching, 
-    financial support, and breaking cultural barriers.
+HopeCell provides emotional, logistical, and financial support to patients and families battling blood cancers.
   </p>
 
 </div>
