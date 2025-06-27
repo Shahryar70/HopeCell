@@ -64,7 +64,7 @@ const Support = () => {
   <div className="flex flex-wrap gap-4">
     <a href="tel:+923088949882" className="bg-white text-teal-700 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100">
       <FaPhoneAlt className="inline mr-2" />
-      Call: +92-3088949882
+      Call: +92-308 8949882
     </a>
     <a href="mailto:support@hopecell.org" className="bg-white text-teal-700 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100">
       <FaEnvelope className="inline mr-2" />
