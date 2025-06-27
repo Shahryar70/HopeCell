@@ -48,7 +48,7 @@ HopeCell provides emotional, logistical, and financial support to patients and f
         </div>
         
         <div className="bg-gray-50 p-6 rounded-lg">
-          <h2 className="text-2xl font-semibold mb-4">Resources</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Resources</h2>
           <ul className="space-y-3">
             <li>• Treatment guidance</li>
             <li>• Support groups</li>
