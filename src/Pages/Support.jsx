@@ -40,7 +40,7 @@ HopeCell provides emotional, logistical, and financial support to patients and f
       <div className="grid md:grid-cols-2 gap-8">
         <div className="bg-gray-50 p-6 rounded-lg">
           <h2 className="text-2xl font-bold mb-4 text-red-600">Urgent Needs</h2>
-          <ul className="space-y-3 ">
+          <ul className="space-y-3 list-disc">
             <li> Stem cell donor matching</li>
             <li> Financial assistance programs</li>
             <li> Emergency medical support</li>
