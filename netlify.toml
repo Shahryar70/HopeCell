@@ -1,3 +1,2 @@
 [build]
-  command = "npm run build"
-  publish = "build"
+  command = "GENERATE_SOURCEMAP=false react-scripts build"

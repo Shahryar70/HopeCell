@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import {FaDna, FaHandHoldingMedical} from 'react-icons/fa';
 import Header from '../Home/Header';
 import Footer from '../Home/Footer';
 import 'swiper/css';
