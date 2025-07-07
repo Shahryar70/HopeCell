@@ -4,6 +4,7 @@ import Footer from '../Home/Footer';
 import { FaPhoneAlt,FaEnvelope } from 'react-icons/fa';
 import SupportTypes from './SupportTypes';
 import RequestSupport from './RequestSupport';
+import SupportFaqs from './SupportFaqs';
 const Support = () => {
   return (
     <>
@@ -38,45 +39,7 @@ const Support = () => {
 </div>
    <SupportTypes/>
    <RequestSupport/>
-    <div className="max-w-6xl mx-auto px-4 py-12">
-      <h1 className="text-3xl text-center font-bold text-teal-800 mb-8">Patient Support</h1>
-      
-      <div className="grid md:grid-cols-2 gap-8">
-        <div className="bg-gray-50 p-6 rounded-lg">
-          <h2 className="text-2xl font-bold mb-4 text-red-600">Urgent Needs</h2>
-          <ul className="space-y-3 list-disc">
-            <li> Stem cell donor matching</li>
-            <li> Financial assistance programs</li>
-            <li> Emergency medical support</li>
-          </ul>
-        </div>
-        
-        <div className="bg-gray-50 p-6 rounded-lg">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Resources</h2>
-          <ul className="space-y-3 list-disc">
-            <li> Treatment guidance</li>
-            <li> Support groups</li>
-            <li> Clinical trial information</li>
-          </ul>
-        </div>
-      </div>
-      
-   <div className="mt-10 p-6 bg-gradient-to-r from-teal-500 to-teal-700 rounded-lg text-white">
-  <h2 className="text-2xl font-semibold mb-2">Need Immediate Assistance?</h2>
-  <p className="mb-4">   <p className="text-white mb-4">For urgent needs, call our helpline immediately. Our team is available around the clock.</p></p>
-  <div className="flex flex-wrap gap-4">
-    <a href="tel:+923088949882" className="bg-white text-teal-700 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100">
-      <FaPhoneAlt className="inline mr-2" />
-      Call: +92-308 8949882
-    </a>
-    <a href="mailto:support@hopecell.org" className="bg-white text-teal-700 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100">
-      <FaEnvelope className="inline mr-2" />
-      Email Us
-    </a>
-  </div>
-</div>
-
-   </div> 
+   <SupportFaqs/>
     <Footer/>
     </>
   );
