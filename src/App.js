@@ -17,6 +17,8 @@ import Support from './Pages/Support';
 import GetInvolved from './GetInvolved/GetInvolved';
 import VolunteerFormPage from './GetInvolved/VolunteerFormPage';
 import PartnerPage from './GetInvolved/PartnerPage';
+import ApplicationForm from './Pages/ApplicationForm';
+import SuccessPage from './Pages/SuccessPage';
 
 function App() {
   return (
@@ -29,6 +31,9 @@ function App() {
           <Route path='/support' element={<Support/>}/> 
           <Route path='/volunteer-page' element={<VolunteerFormPage/>}/>
           <Route path='/partner-us' element={<PartnerPage/>}/>
+          <Route path="/get-support/application" element={<ApplicationForm/>}/>
+        <Route path="/get-support/success" element={<SuccessPage />} />
+
          {/* Admin Panel Routes */}
         <Route path="/login" element={<HopeCellLogin />} />
         <Route path='/admin' element={<AdminDashboard/>}/>
