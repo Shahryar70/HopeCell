@@ -62,10 +62,12 @@ const ApplicationForm = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here you would typically send data to your backend
-    console.log({ formData, selectedNeeds, files });
-    navigate('/get-support/success', { state: { formData } });
+    const formData = new FormData();
+ Object.entries(formData).forEach(([key, value]) => {
+      if (key !== 'consentAccuracy' && key !== 'consentContact') {
+        formData.append(key, value);
+      }
+    });
   };
 
   return (
