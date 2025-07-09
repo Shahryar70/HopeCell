@@ -92,7 +92,7 @@ const handleSubmit = async (e) => {
     formDataToSend.append('ConsentAccuracy', formData.consentAccuracy);
     formDataToSend.append('ConsentContact', formData.consentContact);
 
-  //support needs section:
+  //support needs
 selectedNeeds.forEach((need, index) => {
   formDataToSend.append(`SupportNeeds[${index}].NeedType`, need.id);
   formDataToSend.append(`SupportNeeds[${index}].Description`, need.text || `Need for ${need.id}`); // Always include description
