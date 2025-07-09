@@ -3,6 +3,9 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { FaUpload, FaArrowLeft } from 'react-icons/fa';
 
 const ApplicationForm = () => {
+  const apiUrl = process.env.REACT_APP_API_URL;
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
   const [selectedNeeds, setSelectedNeeds] = useState([]);
@@ -61,14 +64,73 @@ const ApplicationForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    const formData = new FormData();
- Object.entries(formData).forEach(([key, value]) => {
-      if (key !== 'consentAccuracy' && key !== 'consentContact') {
-        formData.append(key, value);
-      }
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  setError(null);
+
+  try {
+    const formDataToSend = new FormData();
+
+    // Convert diagnosisDate to DateOnly format (YYYY-MM-DD)
+    const diagnosisDate = new Date(formData.diagnosisDate);
+    const formattedDate = diagnosisDate.toISOString().split('T')[0];
+
+    // Add all fields with proper names
+    formDataToSend.append('FullName', formData.fullName);
+    formDataToSend.append('Age', formData.age);
+    formDataToSend.append('Gender', formData.gender);
+    formDataToSend.append('CNIC', formData.cnic);
+    formDataToSend.append('PhoneNumber', formData.phone);
+    formDataToSend.append('Email', formData.email);
+    formDataToSend.append('City', formData.city);
+    formDataToSend.append('BloodType', formData.bloodType);
+    formDataToSend.append('DiagnosisDate', formattedDate);
+    formDataToSend.append('HospitalName', formData.hospital);
+    formDataToSend.append('DoctorName', formData.doctorName);
+    formDataToSend.append('DoctorContact', formData.doctorContact);
+    formDataToSend.append('ConsentAccuracy', formData.consentAccuracy);
+    formDataToSend.append('ConsentContact', formData.consentContact);
+
+  //support needs section:
+selectedNeeds.forEach((need, index) => {
+  formDataToSend.append(`SupportNeeds[${index}].NeedType`, need.id);
+  formDataToSend.append(`SupportNeeds[${index}].Description`, need.text || `Need for ${need.id}`); // Always include description
+});
+
+    // Add files with correct field names
+    if (files.diagnosis) formDataToSend.append('DiagnosisProof', files.diagnosis);
+    if (files.treatment) formDataToSend.append('TreatmentPlan', files.treatment);
+    if (files.labReports) formDataToSend.append('LabReports', files.labReports);
+    if (files.insurance) formDataToSend.append('InsuranceInfo', files.insurance);
+
+    const response = await fetch(`${apiUrl}/api/SupportRequests`, {
+      method: 'POST',
+      body: formDataToSend,
     });
-  };
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error('Validation errors:', errorData.errors);
+      
+      // Format validation errors for display
+      const errorMessages = Object.entries(errorData.errors || {})
+        .map(([field, errors]) => `${field}: ${errors.join(', ')}`)
+        .join('\n');
+      
+      throw new Error(errorMessages || 'Validation failed');
+    }
+
+    const result = await response.json();
+    navigate('/get-support/success', { state: { ref: result.referenceNumber } });
+
+  } catch (error) {
+    console.error('Submission error:', error);
+    setError(error.message);
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   return (
     <div className="bg-white py-12 px-4 sm:px-6 lg:px-8">
@@ -86,6 +148,12 @@ const ApplicationForm = () => {
             Please fill in your details so we can process your support request.
           </p>
         </div>
+
+        {error && (
+          <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+            {error}
+          </div>
+        )}
 
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Personal Information Section */}
@@ -320,19 +388,41 @@ const ApplicationForm = () => {
             </div>
           </div>
 
-          {/* Selected Needs Section */}
-          {selectedNeeds.length > 0 && (
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h2 className="text-xl font-semibold mb-4">Support Needs</h2>
-              <div className="flex flex-wrap gap-2">
-                {selectedNeeds.map((need, index) => (
-                  <span key={index} className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">
-                    {need.id === 'other' ? `Other: ${need.text}` : need.id.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
+        {/* Selected Needs Section */}
+{selectedNeeds.length > 0 && (
+  <div className="bg-gray-50 p-6 rounded-lg">
+    <h2 className="text-xl font-semibold mb-4">Support Needs</h2>
+    <div className="space-y-4">
+      {selectedNeeds.map((need, index) => (
+        <div key={index} className="space-y-2">
+          <div className="flex items-center gap-2">
+            <span className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">
+              {need.id === 'other' ? 'Other' : need.id.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
+            </span>
+          </div>
+          <div>
+            <label htmlFor={`need-${index}-desc`} className="block text-sm font-medium text-gray-700 mb-1">
+              Description for this need *
+            </label>
+            <input
+              type="text"
+              id={`need-${index}-desc`}
+              value={need.text}
+              onChange={(e) => {
+                const updatedNeeds = [...selectedNeeds];
+                updatedNeeds[index].text = e.target.value;
+                setSelectedNeeds(updatedNeeds);
+              }}
+              required
+              className="w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 p-2 border"
+              placeholder={`Describe your ${need.id} need`}
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+)}
 
           {/* Consent Section */}
           <div className="bg-gray-50 p-6 rounded-lg">
@@ -379,11 +469,12 @@ const ApplicationForm = () => {
 
           {/* Submit Button */}
           <div className="text-center">
-            <button
+            <button 
               type="submit"
-              className="w-full sm:w-auto px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-medium rounded-md shadow-md"
+              disabled={isSubmitting}
+              className={`w-full sm:w-auto px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-medium rounded-md shadow-md ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
             >
-              Submit Application
+              {isSubmitting ? 'Submitting...' : 'Submit Application'}
             </button>
           </div>
         </form>
