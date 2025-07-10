@@ -424,7 +424,7 @@ selectedNeeds.forEach((need, index) => {
   </div>
 )}
 
-          {/* Consent Section */}
+          {/* Consent */}
           <div className="bg-gray-50 p-6 rounded-lg">
             <h2 className="text-xl font-semibold mb-4">Consent</h2>
             <div className="space-y-3">
