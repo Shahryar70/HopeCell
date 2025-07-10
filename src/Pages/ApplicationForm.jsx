@@ -104,21 +104,32 @@ selectedNeeds.forEach((need, index) => {
     if (files.labReports) formDataToSend.append('LabReports', files.labReports);
     if (files.insurance) formDataToSend.append('InsuranceInfo', files.insurance);
 
-    const response = await fetch(`${apiUrl}/api/SupportRequests`, {
+ const response = await fetch(`${apiUrl}/api/SupportRequests`, {
       method: 'POST',
       body: formDataToSend,
     });
-
-    if (!response.ok) {
-      const errorData = await response.json();
-      console.error('Validation errors:', errorData.errors);
+  if (!response.ok) {
+      let errorData;
+      try {
+        // Try to parse as JSON
+        errorData = await response.json();
+      } catch (jsonError) {
+        // If JSON parsing fails, get the text
+        const text = await response.text();
+        throw new Error(text || `Request failed with status ${response.status}`);
+      }
       
-      // Format validation errors for display
-      const errorMessages = Object.entries(errorData.errors || {})
-        .map(([field, errors]) => `${field}: ${errors.join(', ')}`)
-        .join('\n');
-      
-      throw new Error(errorMessages || 'Validation failed');
+      // Handle structured errors
+      if (errorData.message) {
+        throw new Error(errorData.message);
+      }
+      if (errorData.errors) {
+        const errorMessages = Object.entries(errorData.errors)
+          .map(([field, errors]) => `${field}: ${errors.join(', ')}`)
+          .join('\n');
+        throw new Error(errorMessages);
+      }
+      throw new Error(errorData || 'Request failed');
     }
 
     const result = await response.json();
@@ -131,7 +142,6 @@ selectedNeeds.forEach((need, index) => {
     setIsSubmitting(false);
   }
 };
-
   return (
     <div className="bg-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
