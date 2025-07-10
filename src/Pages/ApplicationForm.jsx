@@ -388,7 +388,7 @@ selectedNeeds.forEach((need, index) => {
             </div>
           </div>
 
-        {/* Selected Needs Section */}
+        {/* Selected Needs */}
 {selectedNeeds.length > 0 && (
   <div className="bg-gray-50 p-6 rounded-lg">
     <h2 className="text-xl font-semibold mb-4">Support Needs</h2>
