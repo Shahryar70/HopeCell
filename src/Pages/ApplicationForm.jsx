@@ -352,7 +352,7 @@ selectedNeeds.forEach((need, index) => {
             </div>
           </div>
 
-          {/* Document Uploads Section */}
+          {/* Document Uploads */}
           <div className="bg-gray-50 p-6 rounded-lg">
             <h2 className="text-xl font-semibold mb-4">Document Uploads</h2>
             <div className="space-y-4">
