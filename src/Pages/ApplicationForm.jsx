@@ -156,7 +156,7 @@ selectedNeeds.forEach((need, index) => {
         )}
 
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Personal Information Section */}
+          {/* Personal Information */}
           <div className="bg-gray-50 p-6 rounded-lg">
             <h2 className="text-xl font-semibold mb-4">Personal Information</h2>
             <div className="grid sm:grid-cols-2 gap-4">
