@@ -4,12 +4,8 @@ HopeCell is a comprehensive platform designed to support individuals battling bl
 🔒 Note: This project currently runs locally and is not yet deployed publicly.
 
 📸 Preview
-<img width="1920" height="836" alt="image" src="https://github.com/user-attachments/assets/d6a72e7b-8e81-4997-98a5-5c23681ac5d9" />
-<img width="1920" height="832" alt="image" src="https://github.com/user-attachments/assets/05a7a315-a9ba-4470-9b5b-87093ec285e2" />
-<img width="1920" height="827" alt="image" src="https://github.com/user-attachments/assets/3c6e1eca-70d5-4d40-862a-90ba43f30fd8" />
-<img width="1920" height="832" alt="image" src="https://github.com/user-attachments/assets/4883ec18-9ac5-4340-afaa-80c0bf63f621" />
-<img width="1920" height="829" alt="image" src="https://github.com/user-attachments/assets/d30409ec-b603-489c-aeb3-631c63aa7572" />
-<img width="1920" height="833" alt="image" src="https://github.com/user-attachments/assets/4d4a9003-8819-4ee0-a1df-c1caf30bab03" />
+<img width="1065" height="3034" alt="modified_image" src="https://github.com/user-attachments/assets/f62fac6f-7c65-46fa-a84c-9f933e62202c" />
+
 
 💡 Project Objective
 The goal of HopeCell is to build a localized donor registry and support network for patients suffering from blood disorders such as leukemia, lymphoma, and other cancers.
