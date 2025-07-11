@@ -73,19 +73,33 @@ List of active support requests
 Urgent needs and real-time data
 
 🛠️ Tech Stack
-Category	Technologies
-Frontend	React.js, Tailwind CSS, Swiper.js
-Backend	ASP.NET Core Web API
-Database	SQL Server
-API Handling	Axios
-State/Logic	React Hooks
+
+| Category         | Technologies                      |
+| ---------------- | --------------------------------- |
+| **Frontend**     | React.js, Tailwind CSS, Swiper.js |
+| **Backend**      | ASP.NET Core Web API              |
+| **Database**     | SQL Server                        |
+| **API Handling** | Axios                             |
+| **State/Logic**  | React Hooks                       |
+
+
+
 🧪 How to Run Locally
 📦 Frontend Setup (React.js)
+# Clone the repository
+git clone https://github.com/Shahryar70/HopeCell.git
 
+# Navigate into the frontend project directory
+cd HopeCell
 
-bash
-Copy
-Edit
+# Install dependencies
+npm install
+
+# Start the frontend development server
+npm start
+
+# Clone the repository
+git clone https://github.com/your-username/hopecell.git
 
 # Navigate into the frontend project directory
 cd hopecell
@@ -95,6 +109,7 @@ npm install
 
 # Start the frontend development server
 npm start
+
 ⚙️ Backend Setup (ASP.NET Core API)
 Open the backend project in Visual Studio or VS Code
 
