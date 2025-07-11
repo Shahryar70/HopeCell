@@ -113,6 +113,27 @@ npm start
 ⚙️ Backend Setup (ASP.NET Core API)
 Open the backend project in Visual Studio or VS Code
 
+🔐 Data Handling & Security
+All user-submitted data (forms, support requests, donations) is validated on both client and server
+
+API endpoints are protected from unauthorized access
+
+Sensitive data is securely stored in the database
+
+🧭 Future Improvements
+📱 Mobile app version with React Native
+
+📤 Email notifications for donors and patients
+
+📍 Geo-based donor matching
+
+🧾 Admin approval system for support requests
+
+❤️ A Project That Saves Lives
+HopeCell is more than software — it’s a lifeline. Every donor registered, every referral made, every rupee donated — brings someone closer to healing.
+
+
+
 Ensure connection string to SQL Server is correctly configured
 
 Run database migrations (if applicable)
