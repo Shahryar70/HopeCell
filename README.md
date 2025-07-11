@@ -81,11 +81,11 @@ API Handling	Axios
 State/Logic	React Hooks
 🧪 How to Run Locally
 📦 Frontend Setup (React.js)
+
+
 bash
 Copy
 Edit
-# Clone the repository
-git clone https://github.com/your-username/hopecell.git
 
 # Navigate into the frontend project directory
 cd hopecell
