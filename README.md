@@ -138,6 +138,6 @@ Ensure connection string to SQL Server is correctly configured
 
 Run database migrations (if applicable)
 
-Start the API project (usually runs on https://localhost:7219 or similar)
+Start the API project (usually runs on https://localhost:7260 or similar)
 
-🔗 Ensure your React frontend's proxy is configured to your backend API base URL (like https://localhost:7219) inside package.json.
+🔗 Ensure your React frontend's proxy is configured to your backend API base URL (like https://localhost:7260) inside package.json.
