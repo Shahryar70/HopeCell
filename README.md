@@ -4,7 +4,7 @@ HopeCell is a full-featured platform developed to support **blood cancer patient
 
 ## 📸 Preview
 
-![HopeCell Preview](./screenshot.png)
+![HopeCell Preview] 
 
 > 🔒 *Note: This project is currently running locally and not deployed publicly.*
 
