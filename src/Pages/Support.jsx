@@ -7,7 +7,7 @@ import RequestSupport from './RequestSupport';
 import SupportFaqs from './SupportFaqs';
 const Support = () => {
   return (
-    <div>
+    <>
     <Header/>
        <div className="relative h-[60vh]  overflow-hidden">
   {/* Hero Image */}
@@ -41,7 +41,7 @@ const Support = () => {
    <RequestSupport/>
    <SupportFaqs/>
     <Footer/>
-    </div>
+    </>
   );
 };
 
