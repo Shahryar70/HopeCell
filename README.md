@@ -4,6 +4,9 @@ HopeCell is a comprehensive platform designed to support individuals battling bl
 🔒 Note: This project currently runs locally and is not yet deployed publicly.
 
 📸 Preview
+Home Page
+
+
 <img src="./public/Assets/Images/Readme/modified_image.png" alt="Preview" width="100%" />
 
 
@@ -96,17 +99,6 @@ npm install
 # Start the frontend development server
 npm start
 
-# Clone the repository
-git clone https://github.com/your-username/hopecell.git
-
-# Navigate into the frontend project directory
-cd hopecell
-
-# Install dependencies
-npm install
-
-# Start the frontend development server
-npm start
 
 ⚙️ Backend Setup (ASP.NET Core API)
 Open the backend project in Visual Studio or VS Code
