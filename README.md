@@ -4,6 +4,9 @@ HopeCell is a comprehensive platform designed to support individuals battling bl
 🔒 Note: This project currently runs locally and is not yet deployed publicly.
 
 📸 Preview
+Home Page
+
+
 <img src="./public/Assets/Images/Readme/modified_image.png" alt="Preview" width="100%" />
 
 
