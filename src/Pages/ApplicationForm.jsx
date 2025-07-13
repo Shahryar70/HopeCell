@@ -283,7 +283,7 @@ selectedNeeds.forEach((need, index) => {
             </div>
           </div>
 
-          {/* Medical Information */}
+          {/* Medical Details */}
           <div className="bg-gray-50 p-6 rounded-lg">
             <h2 className="text-xl font-semibold mb-4">Medical Information</h2>
             <div className="space-y-4">
