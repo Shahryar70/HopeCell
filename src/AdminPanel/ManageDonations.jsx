@@ -10,6 +10,16 @@ const ManageDonations = () => {
   useEffect( ()=> {
     fetchDonations();
   },[]);
+  const fetchDonations = async () => {
+    try {
+ const response = await axios.get(`${apiUrl}/api/donations`);
+ setDonation(response.data);
+    } catch(error) {
+      console.error('Error while fetching donations:', error);
+    } finally {
+      setLoading(false);
+    }
+  }
   return (
     <div>ManageDonations</div>
   )
