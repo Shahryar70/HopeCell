@@ -13,16 +13,20 @@ const [error, setError] = useState(null);
     fetchDonations();
   }, []);
 
-  const fetchDonations = async () => {
-    try {
-      const response = await axios.get(`${apiUrl}/api/donations`);
-      setDonations(response.data);
-    } catch (error) {
-      console.error('Error fetching donations:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
+
+const fetchDonations = async () => {
+  try {
+    setLoading(true);
+    setError(null);
+    const response = await axios.get(`${apiUrl}/api/donations`);
+    setDonations(response.data);
+  } catch (error) {
+    console.error('Error fetching donations:', error);
+    setError('Failed to load donations. Please try again.');
+  } finally {
+    setLoading(false);
+  }
+};
 
 const deleteDonation = async (id) => {
   if (!window.confirm('Are you sure you want to delete this donation?')) return;
@@ -41,6 +45,11 @@ const deleteDonation = async (id) => {
 
   return (
     <div className={`bg-white dark:bg-slate-800 rounded-lg shadow p-6`}>
+      {error && (
+  <div className="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg">
+    {error}
+  </div>
+)}
       <div className="flex justify-between items-center mb-6">
         <h1 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-slate-800'}`}>
           Manage Donations
