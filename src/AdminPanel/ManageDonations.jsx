@@ -7,6 +7,7 @@ const ManageDonations = ({ darkMode }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedDonation, setSelectedDonation] = useState(null);
   const apiUrl = process.env.REACT_APP_API_URL;
+const [error, setError] = useState(null);
 
   useEffect(() => {
     fetchDonations();
@@ -23,15 +24,15 @@ const ManageDonations = ({ darkMode }) => {
     }
   };
 
-  const deleteDonation = async (id) => {
-    if (!window.confirm('Are you sure you want to delete this donation?')) return;
-    try {
-      await axios.delete(`${apiUrl}/api/donations/${id}`);
-      setDonations(donations.filter((d) => d.id !== id));
-    } catch (error) {
-      console.error('Error deleting donation:', error);
-    }
-  };
+const deleteDonation = async (id) => {
+  if (!window.confirm('Are you sure you want to delete this donation?')) return;
+  try {
+    await axios.delete(`${apiUrl}/api/donations/${id}`);
+    setDonations(donations.filter((d) => d.DonationId !== id)); // Changed from d.id to d.DonationId
+  } catch (error) {
+    console.error('Error deleting donation:', error);
+  }
+};
 
   const viewDonationDetails = (donation) => {
     setSelectedDonation(donation);
@@ -76,7 +77,7 @@ const ManageDonations = ({ darkMode }) => {
               </thead>
               <tbody className={`${darkMode ? 'bg-slate-800 divide-slate-700' : 'bg-white divide-gray-200'}`}>
                 {donations.map((donation) => (
-                  <tr key={donation.id} className={`${darkMode ? 'hover:bg-slate-700' : 'hover:bg-gray-50'}`}>
+ <tr key={donation.DonationId} className={`${darkMode ? 'hover:bg-slate-700' : 'hover:bg-gray-50'}`}>
                     <td className={`px-6 py-4 whitespace-nowrap ${darkMode ? 'text-slate-200' : 'text-gray-900'}`}>
                       {donation.IsAnonymous ? 'Anonymous' : donation.Name}
                     </td>
@@ -90,7 +91,7 @@ const ManageDonations = ({ darkMode }) => {
                       {donation.PaymentMethod}
                     </td>
                     <td className={`px-6 py-4 whitespace-nowrap ${darkMode ? 'text-slate-300' : 'text-gray-500'}`}>
-                      {new Date(donation.createdAt).toLocaleDateString()}
+                    {new Date(donation.DonationDate).toLocaleDateString()}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex space-x-2">
