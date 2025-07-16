@@ -48,11 +48,11 @@ const ManageVolunteers = ({ darkMode }) => {
 {error && (
   <div className="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg"> {error} </div>
 )}
-<di className='flex justify-between items-center mb-6'>
+<div className='flex justify-between items-center mb-6'>
 <h1 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-slate-800'}`}>
 Manage Volunteer
 </h1>
-</di>
+</div>
 {loading ? (
   <p className={`text-lg ${darkMode ? 'text-white' : 'text-gray-800'}`}>Loading Volunteers....</p>
 ) : (
@@ -83,7 +83,7 @@ Manage Volunteer
               </thead>
               <tbody className={`${darkMode ? 'bg-slate-800 divide-slate-700': 'bg-white divide-gray-200' }`}>
             {volunteers.map((volunteer) => (
-              <tr key={volunteer.volunteerId}  className={`${darkMode ? 'hover:bg-slate-700' : 'hover:bg-gray-50'}`}>
+              <tr key={volunteer.id}  className={`${darkMode ? 'hover:bg-slate-700' : 'hover:bg-gray-50'}`}>
                  <td className={`px-6 py-4 whitespace-nowrap ${darkMode ? 'text-slate-200' : 'text-gray-900'}`}>
                       {volunteer.fullName}
                     </td>
