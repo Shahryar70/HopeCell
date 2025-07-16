@@ -8,7 +8,6 @@ const ManageVolunteers = ({ darkMode }) => {
   const [selectedVolunteers, setSelectedVolunteers] = useState(null);
   const [error, setError] = useState(null);
   const apiUrl = process.env.REACT_APP_API_URL;
-const formattedDate = new Date(selectedVolunteers.createdAt).toLocaleString();
 
   useEffect(() => {
     fetchVolunteers();
@@ -141,11 +140,12 @@ Manage Volunteer
  <div className="space-y-4">
  <h3 className="text-lg font-bold text-gray-800 dark:text-white border-b pb-2">Other Details</h3>
  <div className="space-y-2">
-  <p><span className="font-medium">Availability:</span> {selectedVolunteers.availability || 'Not specified'}</p>
-   <p><span className="font-medium">Interests:</span> {selectedVolunteers.interests || 'Not specified'}</p>
-    <p><span className="font-medium">Motivation:</span> {selectedVolunteers.motivation || 'Not specified'}</p>
-     <p><span className="font-medium">Contacted Conset:</span> {selectedVolunteers.consent ? 'Yes': 'No'}</p>
-      <p><span className="font-medium">Registration Date:</span> {formattedDate}</p>
+  <p><span className="font-medium">Availability: </span> {selectedVolunteers.availability || 'Not specified'}</p>
+   <p><span className="font-medium">Interests: </span> {selectedVolunteers.interests || 'Not specified'}</p>
+    <p><span className="font-medium">Motivation: </span> {selectedVolunteers.motivation || 'Not specified'}</p>
+     <p><span className="font-medium">Contacted Conset: </span> {selectedVolunteers.consent ? 'Yes': 'No'}</p>
+      <p><span className="font-medium">Registration Date & Time: </span>
+       {selectedVolunteers.createdAt ? new Date(selectedVolunteers.createdAt).toLocaleString(): 'N/A'}</p>
  </div>
   </div>
 </div>
