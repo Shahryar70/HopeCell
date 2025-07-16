@@ -8,6 +8,7 @@ const ManageVolunteers = ({ darkMode }) => {
   const [selectedVolunteers, setSelectedVolunteers] = useState(null);
   const [error, setError] = useState(null);
   const apiUrl = process.env.REACT_APP_API_URL;
+const formattedDate = new Date(selectedVolunteers.CreatedAt).toLocaleString();
 
   useEffect(() => {
     fetchVolunteers();
@@ -31,7 +32,7 @@ const ManageVolunteers = ({ darkMode }) => {
  if(!window.confirm("Are you sure that you want to delete this donor?" )) return;
  try{
   await axios.delete(`${apiUrl}/api/Volunteers/${id}`);
-  setVolunteers(volunteers.filter((v) => v.volunteerId !== id));
+  setVolunteers(volunteers.filter((v) => v.id !== id));
  } catch (error) {
   console.error('Error deleting Vounteer:', error);
   setError('Failed to delete Vounteer');
@@ -108,7 +109,7 @@ Manage Volunteer
                           View
                         </button>
                         <button
-                          onClick={() => deleteVolunteer(volunteer.volunteerId)}
+                          onClick={() => deleteVolunteer(volunteer.id)}
                           className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-xs md:text-sm"
                         >
                           Delete
@@ -143,6 +144,8 @@ Manage Volunteer
   <p><span className="font-medium">Availability:</span> {selectedVolunteers.availability || 'Not specified'}</p>
    <p><span className="font-medium">Interests:</span> {selectedVolunteers.interests || 'Not specified'}</p>
     <p><span className="font-medium">Motivation:</span> {selectedVolunteers.motivation || 'Not specified'}</p>
+     <p><span className="font-medium">Contacted Conset:</span> {selectedVolunteers.consent ? 'Yes': 'No'}</p>
+      <p><span className="font-medium">Registration Date:</span> {formattedDate}</p>
  </div>
   </div>
 </div>
