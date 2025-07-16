@@ -8,7 +8,7 @@ const ManageVolunteers = ({ darkMode }) => {
   const [selectedVolunteers, setSelectedVolunteers] = useState(null);
   const [error, setError] = useState(null);
   const apiUrl = process.env.REACT_APP_API_URL;
-const formattedDate = new Date(selectedVolunteers.CreatedAt).toLocaleString();
+const formattedDate = new Date(selectedVolunteers.createdAt).toLocaleString();
 
   useEffect(() => {
     fetchVolunteers();
