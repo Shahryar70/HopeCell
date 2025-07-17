@@ -113,9 +113,17 @@ const Partner = ({darkMode}) => {
 <h2 className='text-xl font-bold mb-4 text-slate-800 dark:text-white'>Partner Details</h2>
 <div className='grid grid-cols-1 md:grid-cols-2'>
 <div className='space-y-4'>
-  <h3 className='text-lg font-bold text-gray-800 dark:text-white border-b pb-2'>Personal Information</h3>
+  <h3 className='text-lg font-bold text-gray-800 dark:text-white border-b pb-2'>Organization  Details</h3>
   <div className='space-y-2'>
-    <p><span className='font-medium'></span></p>
+    <p><span className='font-medium'>Organization Name: </span>{selectedPartners.orgName}</p>
+    <p><span className='font-medium'>Address: </span>{selectedPartners.address}</p>
+    <p><span className='font-medium'>Type: </span>{selectedPartners.orgType}</p>
+  </div>
+  <div className='space-y-2'>
+    <h3 className='text-lg font-bold text-gray-800 dark:text-white border-b pb-2'>Contact Person Details</h3>
+<p><span className='font-medium'>Full Name: </span>{selectedPartners.contactName}</p>
+<p><span className='font-medium'>Email: </span>{selectedPartners.email}</p>
+<p><span className='font-medium'>Phone: </span>{selectedPartners.phone}</p>
   </div>
 </div>
 </div>
