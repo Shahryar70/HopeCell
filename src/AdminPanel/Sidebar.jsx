@@ -96,6 +96,12 @@ const Sidebar = ({ setSection, sidebarOpen, setSidebarOpen }) => {
             <FaUsers className="mr-3" /> 
             <span>Register Donors</span>
           </button>
+          <button onClick={() => handleSectionChange('partner')}
+            className={`flex items-center w-full p-3 rounded-lg transition-all
+               ${activeSection === 'partner' ? 'bg-teal-600 text-white': 'text-teal-100 hover:bg-teal-700'}`}
+            >
+              Partner
+          </button>
         </nav>
         
         <div className="p-4 border-t border-teal-600">
