@@ -4,7 +4,8 @@ import {
   FaUsers, 
   FaDonate, 
   FaHeartbeat, 
-  FaSignOutAlt 
+  FaSignOutAlt, 
+  FaUserFriends
 } from 'react-icons/fa';
 
 import { MdOutlineMedicalServices } from 'react-icons/md';
@@ -100,7 +101,8 @@ const Sidebar = ({ setSection, sidebarOpen, setSidebarOpen }) => {
             className={`flex items-center w-full p-3 rounded-lg transition-all
                ${activeSection === 'partner' ? 'bg-teal-600 text-white': 'text-teal-100 hover:bg-teal-700'}`}
             >
-              Partner
+              <FaUserFriends className='mr-3'/>
+             <span>Partner</span>
           </button>
         </nav>
         
