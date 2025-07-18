@@ -45,7 +45,7 @@ const ManageDonations = ({ darkMode }) => {
   };
 
   return (
-    <div className={`bg-white dark:bg-slate-800 rounded-lg shadow p-6`}>
+    <div className={`bg-white dark:bg-slate-700 rounded-lg shadow p-6`}>
       {error && (
         <div className="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg">
           {error}
@@ -88,7 +88,7 @@ const ManageDonations = ({ darkMode }) => {
               </thead>
     <tbody className={`${darkMode ? 'bg-slate-800 divide-slate-700' : 'bg-white divide-gray-200'}`}>
   {donations.map((donation) => (
-    <tr key={donation.donationId} className={`${darkMode ? 'hover:bg-slate-700' : 'hover:bg-gray-50'}`}>
+    <tr key={donation.donationId} className={`${darkMode ? 'hover:bg-slate-800' : 'hover:bg-gray-50'}`}>
       <td className={`px-6 py-4 whitespace-nowrap ${darkMode ? 'text-slate-200' : 'text-gray-900'}`}>
         {donation.isAnonymous ? 'Anonymous' : donation.name || 'N/A'}
       </td>
@@ -133,7 +133,7 @@ const ManageDonations = ({ darkMode }) => {
       {/* Modal - Make sure to use DonationDate instead of createdAt */}
      {showModal && selectedDonation && (
   <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-    <div className="bg-white dark:bg-slate-900 p-6 rounded shadow-lg w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+    <div className="bg-white dark:bg-slate-700 p-6 rounded shadow-lg w-full max-w-2xl max-h-[90vh] overflow-y-auto">
       <h2 className="text-xl font-bold mb-4 text-slate-900 dark:text-white">
         Donation Details
       </h2>
@@ -158,9 +158,9 @@ const ManageDonations = ({ darkMode }) => {
             Address Information
           </h3>
           <div className="space-y-2">
-            <p><span className="font-medium">Address:</span> {selectedDonation.address || 'Not provided'}</p>
-            <p><span className="font-medium">City:</span> {selectedDonation.city || 'Not provided'}</p>
-            <p><span className="font-medium">Country:</span> {selectedDonation.country || 'Pakistan'}</p>
+            <p className='dark:text-gray-200'><span className="font-medium">Address:</span> {selectedDonation.address || 'Not provided'}</p>
+            <p className='dark:text-gray-200'><span className="font-medium">City:</span> {selectedDonation.city || 'Not provided'}</p>
+            <p className='dark:text-gray-200'><span className="font-medium">Country:</span> {selectedDonation.country || 'Pakistan'}</p>
           </div>
         </div>
 
@@ -170,10 +170,10 @@ const ManageDonations = ({ darkMode }) => {
             Donation Details
           </h3>
           <div className="space-y-2">
-            <p><span className="font-medium">Amount:</span> Rs. {selectedDonation.amount || '0'}</p>
-            <p><span className="font-medium">Payment Method:</span> {selectedDonation.paymentMethod || 'N/A'}</p>
-            <p><span className="font-medium">Date:</span> {selectedDonation.donationDate ? new Date(selectedDonation.donationDate).toLocaleString() : 'N/A'}</p>
-            <p><span className="font-medium">Anonymous:</span> {selectedDonation.isAnonymous ? 'Yes' : 'No'}</p>
+            <p className='dark:text-gray-200'><span className="font-medium">Amount:</span> Rs. {selectedDonation.amount || '0'}</p>
+            <p className='dark:text-gray-200'><span className="font-medium">Payment Method:</span> {selectedDonation.paymentMethod || 'N/A'}</p>
+            <p className='dark:text-gray-200'><span className="font-medium">Date:</span> {selectedDonation.donationDate ? new Date(selectedDonation.donationDate).toLocaleString() : 'N/A'}</p>
+            <p className='dark:text-gray-200'><span className="font-medium">Anonymous:</span> {selectedDonation.isAnonymous ? 'Yes' : 'No'}</p>
           </div>
         </div>
 
@@ -183,8 +183,8 @@ const ManageDonations = ({ darkMode }) => {
             Additional Information
           </h3>
           <div className="space-y-2">
-            <p><span className="font-medium">Comment:</span> {selectedDonation.comment || 'None'}</p>
-            <p><span className="font-medium">Special Appeal:</span> {selectedDonation.specialAppeal || 'None'}</p>
+            <p className='dark:text-gray-200'><span className="font-medium">Comment:</span> {selectedDonation.comment || 'None'}</p>
+            <p className='dark:text-gray-200'><span className="font-medium">Special Appeal:</span> {selectedDonation.specialAppeal || 'None'}</p>
           </div>
         </div>
       </div>
