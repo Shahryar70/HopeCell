@@ -194,7 +194,7 @@ const ManageCases = ({ darkMode }) => {
                   type="text"
                   value={formData.type}
                   onChange={(e) => setFormData({...formData, type: e.target.value})}
-                  className="w-full border px-3 py-2 rounded dark:bg-slate-600 dark:border-slate-500"
+                  className="w-full border px-3 py-2 rounded dark:bg-slate-200 dark:border-slate-500"
                   required
                 />
               </div>
