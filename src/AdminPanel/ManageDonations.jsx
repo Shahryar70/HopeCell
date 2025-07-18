@@ -145,10 +145,10 @@ const ManageDonations = ({ darkMode }) => {
             Personal Information
           </h3>
           <div className="space-y-2">
-            <p><span className="font-medium">Name:</span> {selectedDonation.isAnonymous ? 'Anonymous' : selectedDonation.name || 'N/A'}</p>
-            <p><span className="font-medium">Email:</span> {selectedDonation.email || 'N/A'}</p>
-            <p><span className="font-medium">Phone:</span> {selectedDonation.phone || 'N/A'}</p>
-            <p><span className="font-medium">Gender:</span> {selectedDonation.gender || 'Not specified'}</p>
+            <p className='dark:text-gray-200'><span className="font-medium">Name:</span> {selectedDonation.isAnonymous ? 'Anonymous' : selectedDonation.name || 'N/A'}</p>
+            <p className='dark:text-gray-200'><span className="font-medium">Email:</span> {selectedDonation.email || 'N/A'}</p>
+            <p className='dark:text-gray-200'><span className="font-medium">Phone:</span> {selectedDonation.phone || 'N/A'}</p>
+            <p className='dark:text-gray-200'><span className="font-medium">Gender:</span> {selectedDonation.gender || 'Not specified'}</p>
           </div>
         </div>
 
