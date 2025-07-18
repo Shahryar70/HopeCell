@@ -44,7 +44,7 @@ const ManageVolunteers = ({ darkMode }) => {
   }
 
   return (
- <div className={`bg-white dark:bg-slate-800 rounded-lg shadow p-6`}>
+ <div className={`bg-white dark:bg-slate-700 rounded-lg shadow p-6`}>
 {error && (
   <div className="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg"> {error} </div>
 )}
@@ -81,9 +81,9 @@ Manage Volunteer
                   </th>
                 </tr>
               </thead>
-              <tbody className={`${darkMode ? 'bg-slate-800 divide-slate-700': 'bg-white divide-gray-200' }`}>
+              <tbody className={`${darkMode ? 'bg-slate-700 divide-slate-700': 'bg-white divide-gray-200' }`}>
             {volunteers.map((volunteer) => (
-              <tr key={volunteer.id}  className={`${darkMode ? 'hover:bg-slate-700' : 'hover:bg-gray-50'}`}>
+              <tr key={volunteer.id}  className={`${darkMode ? 'hover:bg-slate-800' : 'hover:bg-gray-50'}`}>
                  <td className={`px-6 py-4 whitespace-nowrap ${darkMode ? 'text-slate-200' : 'text-gray-900'}`}>
                       {volunteer.fullName}
                     </td>
@@ -123,28 +123,28 @@ Manage Volunteer
   </>)}
 {showModal && selectedVolunteers && (
   <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-<div className="bg-white dark:bg-slate-900 p-6 rounded-lg shadow-lg w-full  max-w-2xl max-h-[90vh] overflow-y-auto">
+<div className="bg-white dark:bg-slate-700 p-6 rounded-lg shadow-lg w-full  max-w-2xl max-h-[90vh] overflow-y-auto">
 <h2 className="text-xl font-bold mb-4 text-slate-800 dark:text-white">Volunteer Details</h2>
 <div className="grid grid-col-1 md:grid-cols-2 gap-6">
 <div className="space-y-4">
   <h3 className="text-lg font-bold text-gray-800 dark:text-white border-b pb-2">Personal Information</h3>
   <div className="space-y-2">
-    <p><span className="font-medium">Full Name:</span> {selectedVolunteers.fullName}</p>
-     <p><span className="font-medium">Email:</span> {selectedVolunteers.email}</p>
-      <p><span className="font-medium">Phone:</span> {selectedVolunteers.phone}</p>
-       <p><span className="font-medium">Age:</span> {selectedVolunteers.age}</p>
-          <p><span className="font-medium">Location:</span> {selectedVolunteers.city || 'Not specified'}</p>
+    <p className='dark:text-gray-200'><span className="font-medium">Full Name:</span> {selectedVolunteers.fullName}</p>
+     <p className='dark:text-gray-200'><span className="font-medium">Email:</span> {selectedVolunteers.email}</p>
+      <p className='dark:text-gray-200'><span className="font-medium">Phone:</span> {selectedVolunteers.phone}</p>
+       <p className='dark:text-gray-200'><span className="font-medium">Age:</span> {selectedVolunteers.age}</p>
+          <p className='dark:text-gray-200'><span className="font-medium">Location:</span> {selectedVolunteers.city || 'Not specified'}</p>
   </div>
  
   </div>
  <div className="space-y-4">
  <h3 className="text-lg font-bold text-gray-800 dark:text-white border-b pb-2">Other Details</h3>
  <div className="space-y-2">
-  <p><span className="font-medium">Availability: </span> {selectedVolunteers.availability || 'Not specified'}</p>
-   <p><span className="font-medium">Interests: </span> {selectedVolunteers.interests || 'Not specified'}</p>
-    <p><span className="font-medium">Motivation: </span> {selectedVolunteers.motivation || 'Not specified'}</p>
-     <p><span className="font-medium">Contacted Conset: </span> {selectedVolunteers.consent ? 'Yes': 'No'}</p>
-      <p><span className="font-medium">Registration Date & Time: </span>
+  <p className='dark:text-gray-200'><span className="font-medium">Availability: </span> {selectedVolunteers.availability || 'Not specified'}</p>
+   <p className='dark:text-gray-200'><span className="font-medium">Interests: </span> {selectedVolunteers.interests || 'Not specified'}</p>
+    <p className='dark:text-gray-200'><span className="font-medium">Motivation: </span> {selectedVolunteers.motivation || 'Not specified'}</p>
+     <p className='dark:text-gray-200'><span className="font-medium">Contacted Conset: </span> {selectedVolunteers.consent ? 'Yes': 'No'}</p>
+      <p className='dark:text-gray-200'><span className="font-medium">Registration Date & Time: </span>
        {selectedVolunteers.createdAt ? new Date(selectedVolunteers.createdAt).toLocaleString(): 'N/A'}</p>
  </div>
   </div>
