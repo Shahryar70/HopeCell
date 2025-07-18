@@ -211,12 +211,12 @@ const ManageCases = ({ darkMode }) => {
               </div>
               
               <div>
-                <label className="block text-sm font-medium mb-1">Location</label>
+                <label className="block text-sm font-medium mb-1 dark:text-white">Location</label>
                 <input
                   type="text"
                   value={formData.location}
                   onChange={(e) => setFormData({...formData, location: e.target.value})}
-                  className="w-full border px-3 py-2 rounded dark:bg-slate-600 dark:border-slate-500"
+                  className="w-full border px-3 py-2 rounded dark:bg-slate-600 dark:text-gray-100 dark:border-slate-500"
                   required
                 />
               </div>
