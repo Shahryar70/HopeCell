@@ -20,6 +20,7 @@ import PartnerPage from './GetInvolved/PartnerPage';
 import ApplicationForm from './Pages/ApplicationForm';
 import SuccessPage from './Pages/SuccessPage';
 import ManageDonors from './AdminPanel/ManageDonors';
+import Partner from './AdminPanel/Partner';
 
 function App() {
   return (
@@ -47,7 +48,7 @@ function App() {
           <Route path='/donate' element={<DonationPage/>}/>
           <Route path='/donation-success' element={<DonationSuccess/>}/>
           <Route path='donor-details' element={<ManageDonors/>}/>
-   
+   <Route path='/partner' element={<Partner/>}/>
       </Routes>
     </Router>
    

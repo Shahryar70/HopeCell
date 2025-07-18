@@ -62,17 +62,8 @@ const Partner = ({darkMode}) => {
                     Full Name
                   </th>
                   <th className={`px-6 py-3 text-left text-xs font-medium uppercase tracking-wider ${darkMode ? 'text-slate-300' : 'text-gray-500'}`}>
-                    Email
-                  </th>
-                  <th className={`px-6 py-3 text-left text-xs font-medium uppercase tracking-wider ${darkMode ? 'text-slate-300' : 'text-gray-500'}`}>
-                    Phone
-                  </th>
-                  <th className={`px-6 py-3 text-left text-xs font-medium uppercase tracking-wider ${darkMode ? 'text-slate-300' : 'text-gray-500'}`}>
-                  City/Location
-                  </th>
-                  <th className={`px-6 py-3 text-left text-xs font-medium uppercase tracking-wider ${darkMode ? 'text-slate-300' : 'text-gray-500'}`}>
-                    Age
-                  </th>
+                    Type
+                  </th>           
                  <th className={`px-6 py-3 text-left text-xs font-medium uppercase tracking-wider ${darkMode ? 'text-slate-300' : 'text-gray-500'}`}>
                     Actions
                   </th>
@@ -113,8 +104,8 @@ const Partner = ({darkMode}) => {
 <h2 className='text-xl font-bold mb-4 text-slate-800 dark:text-white'>Partner Details</h2>
 <div className='grid grid-cols-1 md:grid-cols-2'>
 <div className='space-y-4'>
-  <h3 className='text-lg font-bold text-gray-800 dark:text-white border-b pb-2'>Organization  Details</h3>
   <div className='space-y-2'>
+      <h3 className='text-lg font-bold text-gray-800 dark:text-white border-b pb-2'>Organization  Details</h3>
     <p><span className='font-medium'>Organization Name: </span>{selectedPartners.orgName}</p>
     <p><span className='font-medium'>Address: </span>{selectedPartners.address}</p>
     <p><span className='font-medium'>Type: </span>{selectedPartners.orgType}</p>
@@ -126,6 +117,25 @@ const Partner = ({darkMode}) => {
 <p><span className='font-medium'>Phone: </span>{selectedPartners.phone}</p>
   </div>
 </div>
+<div className='space-y-4'>
+<div className='spcae-y-2'>
+<h3 className='text-lg font-bold text-gray-800 dark:text-white border-b pb-2'>Additional Information</h3>
+<p><span className='font-medium'>PartnerShip Type: </span>{selectedPartners.partnershipTypes || 'None'}</p>
+<p><span className='font-medium'>Message: </span>{selectedPartners.message || 'None'}</p>
+<p><span className='font-medium'>Document: </span>{selectedPartners.file || 'None'}</p>
+</div>
+</div>
+  <div className="mt-6 flex justify-end">
+        <button
+          onClick={() => {
+            setShowModal(false);
+            setSelectedPartners(null);
+          }}
+          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded text-sm"
+        >
+          Close
+        </button>
+      </div>
 </div>
 </div>
     </div>

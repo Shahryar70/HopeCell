@@ -6,6 +6,7 @@ import ManageVolunteers from './ManageVolunteers';
 import ManageCases from './ManageCases';
 import TopBar from './TopBar';
 import ManageDonors from './ManageDonors';
+import Partner from './Partner';
 
 const AdminDashboard = () => {
   const [section, setSection] = useState('dashboard');
@@ -18,6 +19,7 @@ const AdminDashboard = () => {
       case 'donations': return <ManageDonations darkMode={darkMode} />;
       case 'volunteers': return <ManageVolunteers darkMode={darkMode} />;
       case 'donor': return <ManageDonors darkMode={darkMode}/>
+      case 'partner': return <Partner darkMode={darkMode}/>
       default: return <DashboardHome darkMode={darkMode} />;
     }
   };
