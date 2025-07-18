@@ -222,22 +222,22 @@ const ManageCases = ({ darkMode }) => {
               </div>
               
               <div>
-                <label className="block text-sm font-medium mb-1">Deadline</label>
+                <label className="block text-sm font-medium mb-1 dark:text-white">Deadline</label>
                 <input
                   type="date"
                   value={formData.deadline}
                   onChange={(e) => setFormData({...formData, deadline: e.target.value})}
-                  className="w-full border px-3 py-2 rounded dark:bg-slate-600 dark:border-slate-500"
+                  className="w-full border px-3 py-2 rounded dark:bg-slate-600 dark:text-gray-100 dark:border-slate-500"
                   required
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-medium mb-1">Priority</label>
+                <label className="block text-sm font-medium mb-1 dark:text-white">Priority</label>
                 <select
                   value={formData.priority}
                   onChange={(e) => setFormData({...formData, priority: e.target.value})}
-                  className="w-full border px-3 py-2 rounded dark:bg-slate-600 dark:border-slate-500"
+                  className="w-full border px-3 py-2 rounded dark:bg-slate-600 dark:text-gray-100 dark:border-slate-500"
                 >
                   <option value="high">High</option>
                   <option value="medium">Medium</option>
