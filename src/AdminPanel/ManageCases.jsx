@@ -183,8 +183,8 @@ const ManageCases = ({ darkMode }) => {
       {/* Add/Edit Modal */}
       {showModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white dark:bg-slate-700 rounded-lg p-6 w-full max-w-md shadow-lg">
-            <h3 className="text-xl font-bold mb-4 text-slate-800 dark:text-white">
+          <div className="bg-white dark:bg-slate-100 rounded-lg p-6 w-full max-w-md shadow-lg">
+            <h3 className="text-xl font-bold mb-4 text-slate-800 dark:text-slate-900">
               {isEditing ? 'Edit Case' : 'Add New Case'}
             </h3>
             <form onSubmit={handleSubmit} className="space-y-4">
