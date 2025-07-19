@@ -30,12 +30,12 @@ const DashboardHome = ({ darkMode }) => {
             {
             title: "Registered Volunteers",
             count: data.registeredVolunteers,
-            color: "bg-slate-100 text-slate-700",
+            color: "bg-teal-100 text-slate-700",
           },
             {
             title: "Registered Partners",
             count: data.registeredPartners,
-            color: "bg-slate-100 text-slate-700",
+            color: "bg-red-100 text-slate-700",
           },
         ]);
       } catch (error) {
