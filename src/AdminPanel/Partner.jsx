@@ -108,21 +108,21 @@ const Partner = ({darkMode}) => {
       <h3 className='text-lg font-bold text-gray-800 dark:text-white border-b pb-2'>Organization  Details</h3>
     <p className='dark:text-gray-200'><span className='font-medium'>Organization Name: </span>{selectedPartners.orgName}</p>
     <p className='dark:text-gray-200'><span className='font-medium'>Address: </span>{selectedPartners.address}</p>
-    <p><span className='font-medium'>Type: </span>{selectedPartners.orgType}</p>
+    <p className='dark:text-gray-200'><span className='font-medium'>Type: </span>{selectedPartners.orgType}</p>
   </div>
   <div className='space-y-2'>
     <h3 className='text-lg font-bold text-gray-800 dark:text-white border-b pb-2'>Contact Person Details</h3>
-<p><span className='font-medium'>Full Name: </span>{selectedPartners.contactName}</p>
-<p><span className='font-medium'>Email: </span>{selectedPartners.email}</p>
-<p><span className='font-medium'>Phone: </span>{selectedPartners.phone}</p>
+<p className='dark:text-gray-200'><span className='font-medium'>Full Name: </span>{selectedPartners.contactName}</p>
+<p className='dark:text-gray-200'><span className='font-medium'>Email: </span>{selectedPartners.email}</p>
+<p className='dark:text-gray-200'><span className='font-medium'>Phone: </span>{selectedPartners.phone}</p>
   </div>
 </div>
 <div className='space-y-4'>
 <div className='spcae-y-2'>
 <h3 className='text-lg font-bold text-gray-800 dark:text-white border-b pb-2'>Additional Information</h3>
-<p><span className='font-medium'>PartnerShip Type: </span>{selectedPartners.partnershipTypes || 'None'}</p>
-<p><span className='font-medium'>Message: </span>{selectedPartners.message || 'None'}</p>
-<p><span className='font-medium'>Document: </span>{selectedPartners.file || 'None'}</p>
+<p className='dark:text-gray-200'><span className='font-medium'>PartnerShip Type: </span>{selectedPartners.partnershipTypes || 'None'}</p>
+<p className='dark:text-gray-200'><span className='font-medium'>Message: </span>{selectedPartners.message || 'None'}</p>
+<p className='dark:text-gray-200'><span className='font-medium'>Document: </span>{selectedPartners.file || 'None'}</p>
 </div>
 </div>
   <div className="mt-6 flex justify-end">
