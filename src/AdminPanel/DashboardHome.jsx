@@ -27,6 +27,16 @@ const DashboardHome = ({ darkMode }) => {
             count: data.registeredDonors,
             color: "bg-slate-100 text-slate-700",
           },
+            {
+            title: "Registered Volunteers",
+            count: data.registeredVolunteers,
+            color: "bg-slate-100 text-slate-700",
+          },
+            {
+            title: "Registered Partners",
+            count: data.registeredPartners,
+            color: "bg-slate-100 text-slate-700",
+          },
         ]);
       } catch (error) {
         console.error("❌ Error fetching dashboard data:", error);
