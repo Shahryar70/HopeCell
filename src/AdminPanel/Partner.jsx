@@ -106,8 +106,8 @@ const Partner = ({darkMode}) => {
 <div className='space-y-4'>
   <div className='space-y-2'>
       <h3 className='text-lg font-bold text-gray-800 dark:text-white border-b pb-2'>Organization  Details</h3>
-    <p><span className='font-medium'>Organization Name: </span>{selectedPartners.orgName}</p>
-    <p><span className='font-medium'>Address: </span>{selectedPartners.address}</p>
+    <p className='dark:text-gray-200'><span className='font-medium'>Organization Name: </span>{selectedPartners.orgName}</p>
+    <p className='dark:text-gray-200'><span className='font-medium'>Address: </span>{selectedPartners.address}</p>
     <p><span className='font-medium'>Type: </span>{selectedPartners.orgType}</p>
   </div>
   <div className='space-y-2'>
