@@ -29,13 +29,13 @@ function App() {
       <Routes>
          <Route path="/" element={<HomePagesCall />} />
          <Route path='/get-involved' element={<GetInvolved/>}/>
-                <Route path='/about' element={<About/>}/>
+          <Route path='/about' element={<About/>}/>
           <Route path='/support' element={<Support/>}/> 
           <Route path='/volunteer-page' element={<VolunteerFormPage/>}/>
           <Route path='/partner-us' element={<PartnerPage/>}/>
           <Route path="/get-support/application" element={<ApplicationForm/>}/>
-        <Route path="/get-support/success" element={<SuccessPage />} />
-
+          <Route path="/get-support/success" element={<SuccessPage />} />
+          
          {/* Admin Panel Routes */}
         <Route path="/login" element={<HopeCellLogin />} />
         <Route path='/admin' element={<AdminDashboard/>}/>
@@ -43,12 +43,12 @@ function App() {
         <Route path='/urgent-cases' element={<ManageCases/>}/>
         <Route path='/donations' element={<ManageDonations/>}/>
         <Route path='/volunteers' element={<ManageVolunteers/>}/>
-          <Route path='/registration' element={<RegistrationPage/>}/>
-          <Route path='/registration-success' element={<RegistrationSuccess/>}/>
-          <Route path='/donate' element={<DonationPage/>}/>
-          <Route path='/donation-success' element={<DonationSuccess/>}/>
-          <Route path='donor-details' element={<ManageDonors/>}/>
-   <Route path='/partner' element={<Partner/>}/>
+        <Route path='/registration' element={<RegistrationPage/>}/>
+        <Route path='/registration-success' element={<RegistrationSuccess/>}/>
+        <Route path='/donate' element={<DonationPage/>}/>
+        <Route path='/donation-success' element={<DonationSuccess/>}/>
+        <Route path='donor-details' element={<ManageDonors/>}/>
+        <Route path='/partner' element={<Partner/>}/>
       </Routes>
     </Router>
    
