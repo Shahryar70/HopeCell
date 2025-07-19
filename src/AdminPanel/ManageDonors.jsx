@@ -174,7 +174,7 @@ const ManageDonors = ({ darkMode }) => {
                   Health Information
                 </h3>
                 <div className="space-y-2">
-                  <p><span className="font-medium">Health Conditions:</span> {selectedDonor.hasHealthConditions ? 'Yes' : 'No'}</p>
+                  <p className='dark:text-gray-200'><span className="font-medium">Health Conditions:</span> {selectedDonor.hasHealthConditions ? 'Yes' : 'No'}</p>
                   <p><span className="font-medium">Blood Type:</span> {selectedDonor.bloodType || 'Unknown'}</p>
                 </div>
               </div>
@@ -185,10 +185,10 @@ const ManageDonors = ({ darkMode }) => {
                   Donation Preferences
                 </h3>
                 <div className="space-y-2">
-                  <p><span className="font-medium">Willingness to Donate:</span> {selectedDonor.willingnessToDonate}</p>
-                  <p><span className="font-medium">ID Verification Agreed:</span> {selectedDonor.agreedToIdVerification ? 'Yes' : 'No'}</p>
-                  <p><span className="font-medium">Registration Date:</span> {selectedDonor.registrationDate ? new Date(selectedDonor.registrationDate).toLocaleString() : 'N/A'}</p>
-                  <p><span className="font-medium">Status:</span> {selectedDonor.isActive ? 'Active' : 'Inactive'}</p>
+                  <p className='dark:text-gray-200'><span className="font-medium">Willingness to Donate:</span> {selectedDonor.willingnessToDonate}</p>
+                  <p className='dark:text-gray-200'><span className="font-medium">ID Verification Agreed:</span> {selectedDonor.agreedToIdVerification ? 'Yes' : 'No'}</p>
+                  <p className='dark:text-gray-200'><span className="font-medium">Registration Date:</span> {selectedDonor.registrationDate ? new Date(selectedDonor.registrationDate).toLocaleString() : 'N/A'}</p>
+                  <p className='dark:text-gray-200'><span className="font-medium">Status:</span> {selectedDonor.isActive ? 'Active' : 'Inactive'}</p>
                 </div>
               </div>
             </div>
