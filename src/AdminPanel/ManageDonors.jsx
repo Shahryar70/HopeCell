@@ -145,12 +145,12 @@ const ManageDonors = ({ darkMode }) => {
                   Personal Information
                 </h3>
                 <div className="space-y-2">
-                  <p><span className="font-medium">Full Name:</span> {selectedDonor.fullName}</p>
-                  <p><span className="font-medium">Email:</span> {selectedDonor.email}</p>
-                  <p><span className="font-medium">Phone:</span> {selectedDonor.phoneNumber}</p>
-                  <p><span className="font-medium">Gender:</span> {selectedDonor.gender}</p>
-                  <p><span className="font-medium">Age:</span> {selectedDonor.age}</p>
-                  <p><span className="font-medium">Ethnicity:</span> {selectedDonor.ethnicity || 'Not specified'}</p>
+                  <p className='dark:text-gray-200'><span className="font-medium">Full Name:</span> {selectedDonor.fullName}</p>
+                  <p className='dark:text-gray-200'><span className="font-medium">Email:</span> {selectedDonor.email}</p>
+                  <p className='dark:text-gray-200'><span className="font-medium">Phone:</span> {selectedDonor.phoneNumber}</p>
+                  <p className='dark:text-gray-200'><span className="font-medium">Gender:</span> {selectedDonor.gender}</p>
+                  <p className='dark:text-gray-200'><span className="font-medium">Age:</span> {selectedDonor.age}</p>
+                  <p className='dark:text-gray-200'><span className="font-medium">Ethnicity:</span> {selectedDonor.ethnicity || 'Not specified'}</p>
                 </div>
               </div>
 
@@ -160,11 +160,11 @@ const ManageDonors = ({ darkMode }) => {
                   Address Information
                 </h3>
                 <div className="space-y-2">
-                  <p><span className="font-medium">Street:</span> {selectedDonor.streetAddress || 'Not provided'}</p>
-                  <p><span className="font-medium">City:</span> {selectedDonor.city || 'Not provided'}</p>
-                  <p><span className="font-medium">State/Province:</span> {selectedDonor.stateProvince || 'Not provided'}</p>
-                  <p><span className="font-medium">ZIP/Postal Code:</span> {selectedDonor.zipPostalCode || 'Not provided'}</p>
-                  <p><span className="font-medium">Country:</span> {selectedDonor.country || 'Not provided'}</p>
+                  <p className='dark:text-gray-200'><span className="font-medium">Street:</span> {selectedDonor.streetAddress || 'Not provided'}</p>
+                  <p className='dark:text-gray-200'><span className="font-medium">City:</span> {selectedDonor.city || 'Not provided'}</p>
+                  <p className='dark:text-gray-200'><span className="font-medium">State/Province:</span> {selectedDonor.stateProvince || 'Not provided'}</p>
+                  <p className='dark:text-gray-200'><span className="font-medium">ZIP/Postal Code:</span> {selectedDonor.zipPostalCode || 'Not provided'}</p>
+                  <p className='dark:text-gray-200'><span className="font-medium">Country:</span> {selectedDonor.country || 'Not provided'}</p>
                 </div>
               </div>
 
@@ -175,7 +175,7 @@ const ManageDonors = ({ darkMode }) => {
                 </h3>
                 <div className="space-y-2">
                   <p className='dark:text-gray-200'><span className="font-medium">Health Conditions:</span> {selectedDonor.hasHealthConditions ? 'Yes' : 'No'}</p>
-                  <p><span className="font-medium">Blood Type:</span> {selectedDonor.bloodType || 'Unknown'}</p>
+                  <p className='dark:text-gray-200'><span className="font-medium">Blood Type:</span> {selectedDonor.bloodType || 'Unknown'}</p>
                 </div>
               </div>
 
