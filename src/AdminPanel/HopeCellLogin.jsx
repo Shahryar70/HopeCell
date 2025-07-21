@@ -18,7 +18,7 @@ const HopeCellLogin = () => {
         password,
       });
 
-      setMessage('Login successful!');
+      setMessage('Login successful');
       navigate('/admin'); // ✅ redirect to admin page
     } catch (error) {
       console.error('❌ Login error:', error);
