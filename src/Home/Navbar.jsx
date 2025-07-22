@@ -106,8 +106,8 @@ export const Navbar = ({ withTop = false }) => {
             {/* Drawer Content */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4">
               <a href="/" className="block py-3 text-lg font-medium hover:text-red-600 border-b border-gray-100">Home</a>
-              <a href="/patients" className="block py-3 text-lg font-medium hover:text-red-600 border-b border-gray-100">For Patients</a>
-              <a href="/donors" className="block py-3 text-lg font-medium hover:text-red-600 border-b border-gray-100">For Donors</a>
+              <a className="block py-3 text-lg font-medium hover:text-red-600 border-b border-gray-100">For Patients</a>
+              <a href="/donors" className="block py-3 text-lg font-medium hover:text-red-600 border-b border-gray-100">Donation</a>
               <a href="/get-involved" className="block py-3 text-lg font-medium hover:text-red-600 border-b border-gray-100">Get Involved</a>
               <a href="/about" className="block py-3 text-lg font-medium hover:text-red-600 border-b border-gray-100">About Us</a>
               
