@@ -26,7 +26,7 @@ export const Navbar = ({ withTop = false }) => {
             FOR PATIENTS
           </a>
           <a href="/donors" className="text-base uppercase font-semibold hover:text-red-600 transition-colors">
-            FOR DONORS
+            FOR Donation
           </a>
           <a href="/get-involved" className="text-base  uppercase font-semibold hover:text-red-600 transition-colors">
           GET Involved
