@@ -22,10 +22,10 @@ export const Navbar = ({ withTop = false }) => {
           <a href="/" className="text-base uppercase font-semibold hover:text-red-600 transition-colors">
             HOME
           </a>
-          <a href="/patients" className="text-base uppercase font-semibold hover:text-red-600 transition-colors">
+          <a className="text-base uppercase font-semibold hover:text-red-600 transition-colors">
             FOR PATIENTS
           </a>
-          <a href="/donate"className="text-base uppercase font-semibold hover:text-red-600 transition-colors">
+          <a href="/donate" className="text-base uppercase font-semibold hover:text-red-600 transition-colors">
             FOR Donation
           </a>
           <a href="/get-involved" className="text-base  uppercase font-semibold hover:text-red-600 transition-colors">
