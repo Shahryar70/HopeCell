@@ -12,7 +12,7 @@ export const Navbar = ({ withTop = false }) => {
         <a href="/" className='text-white'>
           <img 
             src="Assets/Images/Home/HopeLogo_2.png" 
-            alt="HopeCell Logo" 
+            alt="Hope Cell Logo" 
             className="h-20 w-auto object-contain" 
           />
         </a>
