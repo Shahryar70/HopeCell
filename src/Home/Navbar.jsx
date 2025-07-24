@@ -17,7 +17,7 @@ export const Navbar = ({ withTop = false }) => {
           />
         </a>
 
-        {/* Desktop Menu*/}
+        {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6">
           <a href="/" className="text-base uppercase font-semibold hover:text-red-600 transition-colors">
             HOME
@@ -63,7 +63,7 @@ export const Navbar = ({ withTop = false }) => {
             )}
           </div>
           
-          {/*Action Button */}
+          {/* Action Button */}
           <a 
             href="/registration" 
             className="bg-red-600 uppercase hover:bg-red-700 text-white px-4 py-2 rounded-full text-sm font-semibold transition-colors"
