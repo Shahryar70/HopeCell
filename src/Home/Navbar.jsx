@@ -17,7 +17,7 @@ export const Navbar = ({ withTop = false }) => {
           />
         </a>
 
-        {/* Desktop Menu */}
+        {/* Desktop Menu*/}
         <div className="hidden md:flex items-center gap-6">
           <a href="/" className="text-base uppercase font-semibold hover:text-red-600 transition-colors">
             HOME
