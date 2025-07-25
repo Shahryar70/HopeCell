@@ -14,6 +14,7 @@ Home Page
 
 
 💡 Project Objective
+
 The goal of HopeCell is to build a localized donor registry and support network for patients suffering from blood disorders such as leukemia, lymphoma, and other cancers.
 
 Key objectives:
