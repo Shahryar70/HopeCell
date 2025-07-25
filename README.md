@@ -1,6 +1,7 @@
 🧬 HopeCell - Lifeline in Every Healing Cell
 
 HopeCell is a comprehensive platform designed to support individuals battling blood cancers by streamlining stem cell and bone marrow donation, financial support, and patient care coordination. It empowers patients, donors, and volunteers through an intuitive and responsive web interface.
+
 🔒 Note: This project currently runs locally and is not yet deployed publicly.
 
 📸 Preview of
