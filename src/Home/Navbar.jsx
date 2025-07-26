@@ -8,7 +8,7 @@ export const Navbar = ({ withTop = false }) => {
   return (
     <nav className={`z-50 w-full shadow-md bg-white ${withTop ? 'sticky top-0' : 'fixed top-0'}`}>
       <div className='container flex items-center justify-between px-4 py-3'>
-        {/* HopeCell Logo */}
+        {/* HopeCell Logo*/}
         <a href="/" className='text-white'>
           <img 
             src="Assets/Images/Home/HopeLogo_2.png" 
