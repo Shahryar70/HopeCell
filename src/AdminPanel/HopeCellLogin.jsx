@@ -7,7 +7,12 @@ const HopeCellLogin = () => {
   const [message, setMessage] = useState('');
   const apiUrl = process.env.REACT_APP_API_URL;
   const navigate = useNavigate(); // ✅ correct usage
-  
+  const token = localStorage.getItem('token');
+  axios.get(`${apiUrl}/api/Auth/admin-only`,{
+    headers: {
+      Authorization: `Bearer ${token}`
+    },
+  })
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage('');
