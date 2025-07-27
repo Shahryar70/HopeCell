@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { use, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // ✅ correct import
 const HopeCellLogin = () => {
@@ -18,6 +18,10 @@ const HopeCellLogin = () => {
         password,
       });
       const {token, user } = response.data;
+      // Saving the token and user info at the local storage
+      localStorage.setItem('toke', token);
+      localStorage.setItem('user', JSON.stringify(user));
+
       setMessage('Login successful');
       navigate('/admin'); // ✅ redirect to admin page
     } catch (error) {
