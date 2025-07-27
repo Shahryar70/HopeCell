@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // ✅ correct import
 const HopeCellLogin = () => {
@@ -7,7 +7,24 @@ const HopeCellLogin = () => {
   const [message, setMessage] = useState('');
   const apiUrl = process.env.REACT_APP_API_URL;
   const navigate = useNavigate(); // ✅ correct usage
-
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      axios.get(`${apiUrl}/api/Auth/admin-only`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then(res => {
+        // User is already logged in, redirect to admin
+        navigate('/admin');
+      })
+      .catch(err => {
+        // Invalid or expired token
+        console.log('Invalid token:', err.response?.status);
+      });
+    }
+  }, [apiUrl, navigate]);
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage('');
@@ -19,7 +36,7 @@ const HopeCellLogin = () => {
       });
       const {token, user } = response.data;
       // Saving the token and user info at the local storage
-      localStorage.setItem('toke', token);
+      localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
 
       setMessage('Login successful');
