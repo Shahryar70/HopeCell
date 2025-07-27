@@ -17,7 +17,7 @@ const HopeCellLogin = () => {
         email,
         password,
       });
-
+      const {token, user } = response.data;
       setMessage('Login successful');
       navigate('/admin'); // ✅ redirect to admin page
     } catch (error) {
