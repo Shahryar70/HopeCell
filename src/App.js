@@ -21,6 +21,7 @@ import ApplicationForm from './Pages/ApplicationForm';
 import SuccessPage from './Pages/SuccessPage';
 import ManageDonors from './AdminPanel/ManageDonors';
 import Partner from './AdminPanel/Partner';
+import UrgentNeeds from './Home/UrgentNeeds';
 
 function App() {
   return (
@@ -35,7 +36,7 @@ function App() {
           <Route path='/partner-us' element={<PartnerPage/>}/>
           <Route path="/get-support/application" element={<ApplicationForm/>}/>
           <Route path="/get-support/success" element={<SuccessPage />} />
-          
+          <Route path='/urgent-support' element={<UrgentNeeds/>}/>
          {/* Admin Panel Routes */}
         <Route path="/login" element={<HopeCellLogin />} />
         <Route path='/admin' element={<AdminDashboard/>}/>
