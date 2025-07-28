@@ -36,7 +36,7 @@ export const Navbar = ({ withTop = false }) => {
           </a>
           
           {/* Support Dropdown - Fixed */}
-          <div className="relative group">
+          {/* <div className="relative group">
             <button 
               className="text-base uppercase font-semibold hover:text-red-600 flex items-center gap-1"
               onMouseEnter={() => setSupportDropdownOpen(true)}
@@ -61,7 +61,7 @@ export const Navbar = ({ withTop = false }) => {
                 </a>
               </div>
             )}
-          </div>
+          </div> */}
           
           {/* Action Button */}
           <a 
