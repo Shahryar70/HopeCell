@@ -53,7 +53,7 @@ const TopNavbar = () => {
         <div className="flex items-center space-x-4">
           {/* Emergency Button */}
           <a 
-            href="/emergency" 
+            href="/urgent-support" 
             className="hidden md:flex items-center text-sm hover:text-rose-400 transition-colors"
           >
             <svg
