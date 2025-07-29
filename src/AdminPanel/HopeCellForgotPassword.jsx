@@ -9,11 +9,20 @@ const HopeCellForgotPassword = () => {
         e.preventDefault();
         setMessage("");
         try {
-            const response = await axios.post(`${apiUrl}/api/Auth/forgot-password`)
+            const response = await axios.post(`${apiUrl}/api/Auth/forgot-password`,{
+                email,
+            });
+            setMessage("If your email exists, a reset link has been sent. Please check your inbox.");
+            console.log("Reset link (for testing):", response.data.link);
+            // backend already returning reset link
+        }
+        catch (error){
+            console.error(error);
+            setMessage("Something went wrong. Please try again")
         }
     }
   return (
-    <div>HopeCellForgotPassword</div>
+    <div className='min-h-screen flex items-center justify-center bg-gray-100'></div>
   )
 }
 
