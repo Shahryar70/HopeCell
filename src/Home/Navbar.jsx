@@ -34,7 +34,9 @@ export const Navbar = ({ withTop = false }) => {
           <a href="/about" className="text-base uppercase font-semibold hover:text-red-600 transition-colors">
             ABOUT US
           </a>
-          
+          <a href='/support' className='text-base uppercase font-semibold hover:text-red-600 transition-colors'>
+          Get Support
+          </a>
           {/* Support Dropdown - Fixed */}
           {/* <div className="relative group">
             <button 
