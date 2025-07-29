@@ -5,7 +5,7 @@ const HopeCellForgotPassword = () => {
     const[message, setMessage] = useState("");
     const apiUrl = process.env.REACT_APP_API_URL;
 
-    const handleSubmir = async (e) =>{
+    const handleSubmit = async (e) =>{
         e.preventDefault();
         setMessage("");
         try {
@@ -22,7 +22,13 @@ const HopeCellForgotPassword = () => {
         }
     }
   return (
-    <div className='min-h-screen flex items-center justify-center bg-gray-100'></div>
+    <div className='min-h-screen flex items-center justify-center bg-gray-100'>
+        <form
+        onSubmit={handleSubmit}
+        >
+
+        </form>
+    </div>
   )
 }
 
