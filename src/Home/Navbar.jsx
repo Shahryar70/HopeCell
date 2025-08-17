@@ -20,17 +20,18 @@ export const Navbar = ({ withTop = false }) => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6">
-          <NavLink  href="#" className={({ isActive }) =>
+          <NavLink  href="/"   className={({ isActive }) =>
       `text-base uppercase font-semibold transition-colors ${
         isActive ? "text-red-600" : "hover:text-red-600"
       }`
     }>
             HOME
           </NavLink >
-          <NavLink  className={({ isActive }) =>
+          <NavLink  cclassName={({ isActive }) =>
       `text-base uppercase font-semibold transition-colors ${
         isActive ? "text-red-600" : "hover:text-red-600"
-      }`}>
+      }`
+    }>
             FOR PATIENTS
           </NavLink>
           <NavLink href="/donate" className={({ isActive }) =>
@@ -88,12 +89,12 @@ export const Navbar = ({ withTop = false }) => {
           </div> */}
           
           {/* Action Button */}
-          <NavLink 
+          <a 
             href="/registration" 
             className="bg-red-600 uppercase hover:bg-red-700 text-white px-4 py-2 rounded-full text-sm font-semibold transition-colors"
           >
             JOIN DONOR REGISTRY
-          </NavLink>
+          </a>
         </div>
 <button 
           className="md:hidden text-gray-700 focus:outline-none"
