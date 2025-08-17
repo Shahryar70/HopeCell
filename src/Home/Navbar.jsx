@@ -20,28 +20,45 @@ export const Navbar = ({ withTop = false }) => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6">
-          <NavLink  href="/" className={({ isActive }) =>
+          <NavLink  href="#" className={({ isActive }) =>
       `text-base uppercase font-semibold transition-colors ${
         isActive ? "text-red-600" : "hover:text-red-600"
       }`
     }>
             HOME
           </NavLink >
-          <a className="text-base uppercase font-semibold hover:text-red-600 transition-colors">
+          <NavLink  className={({ isActive }) =>
+      `text-base uppercase font-semibold transition-colors ${
+        isActive ? "text-red-600" : "hover:text-red-600"
+      }`}>
             FOR PATIENTS
-          </a>
-          <a href="/donate" className="text-base uppercase font-semibold hover:text-red-600 transition-colors">
+          </NavLink>
+          <NavLink href="/donate" className={({ isActive }) =>
+      `text-base uppercase font-semibold transition-colors ${
+        isActive ? "text-red-600" : "hover:text-red-600"
+      }`}>
             FOR Donation
-          </a>
-          <a href="/get-involved" className="text-base  uppercase font-semibold hover:text-red-600 transition-colors">
+          </NavLink>
+          <NavLink href="/get-involved" className={({ isActive }) =>
+      `text-base uppercase font-semibold transition-colors ${
+        isActive ? "text-red-600" : "hover:text-red-600"
+      }`}>
           GET Involved
-          </a>
-          <a href="/about" className="text-base uppercase font-semibold hover:text-red-600 transition-colors">
+          </NavLink>
+          <NavLink href="/about" className={({ isActive }) =>
+      `text-base uppercase font-semibold transition-colors ${
+        isActive ? "text-red-600" : "hover:text-red-600"
+      }`
+    }>
             ABOUT US
-          </a>
-          <a href='/support' className='text-base uppercase font-semibold hover:text-red-600 transition-colors'>
+          </NavLink>
+          <NavLink href='/support' className={({ isActive }) =>
+      `text-base uppercase font-semibold transition-colors ${
+        isActive ? "text-red-600" : "hover:text-red-600"
+      }`
+    }>
           Get Support
-          </a>
+          </NavLink>
           {/* Support Dropdown - Fixed */}
           {/* <div className="relative group">
             <button 
@@ -71,12 +88,12 @@ export const Navbar = ({ withTop = false }) => {
           </div> */}
           
           {/* Action Button */}
-          <a 
+          <NavLink 
             href="/registration" 
             className="bg-red-600 uppercase hover:bg-red-700 text-white px-4 py-2 rounded-full text-sm font-semibold transition-colors"
           >
             JOIN DONOR REGISTRY
-          </a>
+          </NavLink>
         </div>
 <button 
           className="md:hidden text-gray-700 focus:outline-none"
