@@ -7,103 +7,103 @@ export const Navbar = ({ withTop = false }) => {
   const [supportDropdownOpen, setSupportDropdownOpen] = useState(false);
 
   return (
-    <nav className={`z-50 w-full shadow-md bg-white ${withTop ? 'sticky top-0' : 'fixed top-0'}`}>
+    <nav className={`z-30 w-full shadow-md bg-white ${withTop ? 'sticky top-0' : 'fixed top-0'}`}>
       <div className='container flex items-center justify-between px-4 py-3'>
         {/* HopeCell Logo*/}
-        <a href="/" className='text-white'>
+        <NavLink to="/" className='text-white'>
           <img 
             src="Assets/Images/Home/HopeLogo_2.png" 
             alt="HopeCell Logo" 
             className="h-20 w-auto object-contain" 
           />
-        </a>
+        </NavLink>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6">
-          <NavLink  href="/"   className={({ isActive }) =>
-      `text-base uppercase font-semibold transition-colors ${
-        isActive ? "text-red-600" : "hover:text-red-600"
-      }`
-    }>
+          <NavLink 
+            to="/" 
+            className={({ isActive }) =>
+              `text-base uppercase font-semibold transition-colors ${
+                isActive ? "text-red-600" : "hover:text-red-600"
+              }`
+            }
+          >
             HOME
-          </NavLink >
-          <NavLink  cclassName={({ isActive }) =>
-      `text-base uppercase font-semibold transition-colors ${
-        isActive ? "text-red-600" : "hover:text-red-600"
-      }`
-    }>
+          </NavLink>
+
+          <NavLink 
+          
+            className={({ isActive }) =>
+              `text-base uppercase font-semibold transition-colors ${
+                isActive ? "text-red-600" : "hover:text-red-600"
+              }`
+            }
+          >
             FOR PATIENTS
           </NavLink>
-          <NavLink href="/donate" className={({ isActive }) =>
-      `text-base uppercase font-semibold transition-colors ${
-        isActive ? "text-red-600" : "hover:text-red-600"
-      }`}>
-            FOR Donation
+
+          <NavLink 
+            to="/donate"
+            className={({ isActive }) =>
+              `text-base uppercase font-semibold transition-colors ${
+                isActive ? "text-red-600" : "hover:text-red-600"
+              }`
+            }
+          >
+            FOR DONATION
           </NavLink>
-          <NavLink href="/get-involved" className={({ isActive }) =>
-      `text-base uppercase font-semibold transition-colors ${
-        isActive ? "text-red-600" : "hover:text-red-600"
-      }`}>
-          GET Involved
+
+          <NavLink 
+            to="/get-involved"
+            className={({ isActive }) =>
+              `text-base uppercase font-semibold transition-colors ${
+                isActive ? "text-red-600" : "hover:text-red-600"
+              }`
+            }
+          >
+            GET INVOLVED
           </NavLink>
-          <NavLink href="/about" className={({ isActive }) =>
-      `text-base uppercase font-semibold transition-colors ${
-        isActive ? "text-red-600" : "hover:text-red-600"
-      }`
-    }>
+
+          <NavLink 
+            to="/about"
+            className={({ isActive }) =>
+              `text-base uppercase font-semibold transition-colors ${
+                isActive ? "text-red-600" : "hover:text-red-600"
+              }`
+            }
+          >
             ABOUT US
           </NavLink>
-          <NavLink href='/support' className={({ isActive }) =>
-      `text-base uppercase font-semibold transition-colors ${
-        isActive ? "text-red-600" : "hover:text-red-600"
-      }`
-    }>
-          Get Support
+
+          <NavLink 
+            to="/support"
+            className={({ isActive }) =>
+              `text-base uppercase font-semibold transition-colors ${
+                isActive ? "text-red-600" : "hover:text-red-600"
+              }`
+            }
+          >
+            GET SUPPORT
           </NavLink>
-          {/* Support Dropdown - Fixed */}
-          {/* <div className="relative group">
-            <button 
-              className="text-base uppercase font-semibold hover:text-red-600 flex items-center gap-1"
-              onMouseEnter={() => setSupportDropdownOpen(true)}
-              onMouseLeave={() => setSupportDropdownOpen(false)}
-            >
-              SUPPORT <BiChevronDown className="text-xl" />
-            </button>
-            {supportDropdownOpen && (
-              <div 
-                className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-1 z-50"
-                onMouseEnter={() => setSupportDropdownOpen(true)}
-                onMouseLeave={() => setSupportDropdownOpen(false)}
-              >
-                <a href="/financial-aid" className="block px-4 py-2 text-sm hover:bg-gray-100 hover:text-red-600">
-                  Financial Aid
-                </a>
-                <a href="/volunteer" className="block px-4 py-2 text-sm hover:bg-gray-100 hover:text-red-600">
-                  Volunteer
-                </a>
-                <a href="/counseling" className="block px-4 py-2 text-sm hover:bg-gray-100 hover:text-red-600">
-                  Counseling
-                </a>
-              </div>
-            )}
-          </div> */}
-          
+
           {/* Action Button */}
-          <a 
-            href="/registration" 
+          <NavLink 
+            to="/registration" 
             className="bg-red-600 uppercase hover:bg-red-700 text-white px-4 py-2 rounded-full text-sm font-semibold transition-colors"
           >
             JOIN DONOR REGISTRY
-          </a>
+          </NavLink>
         </div>
-<button 
+
+        {/* Mobile Menu Toggle */}
+        <button 
           className="md:hidden text-gray-700 focus:outline-none"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <BiX size={28} /> : <BiMenu size={28} />}
         </button>
 
-        {/* Mobile Drawer - Updated to left-side sliding panel */}
+        {/* Mobile Drawer */}
         <div className={`fixed inset-0 z-40 transition-transform duration-300 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
           {/* Overlay */}
           <div 
@@ -130,12 +130,61 @@ export const Navbar = ({ withTop = false }) => {
 
             {/* Drawer Content */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4">
-              <a href="/" className="block py-3 text-lg font-medium hover:text-red-600 border-b border-gray-100">Home</a>
-              <a className="block py-3 text-lg font-medium hover:text-red-600 border-b border-gray-100">For Patients</a>
-              <a href="/donate" className="block py-3 text-lg font-medium hover:text-red-600 border-b border-gray-100">Donation</a>
-              <a href="/get-involved" className="block py-3 text-lg font-medium hover:text-red-600 border-b border-gray-100">Get Involved</a>
-              <a href="/about" className="block py-3 text-lg font-medium hover:text-red-600 border-b border-gray-100">About Us</a>
-              
+              <NavLink 
+                to="/"
+                className={({ isActive }) =>
+                  `block py-3 text-lg font-medium border-b border-gray-100 ${
+                    isActive ? "text-red-600" : "hover:text-red-600"
+                  }`
+                }
+              >
+                Home
+              </NavLink>
+
+              <NavLink 
+                to="/patients"
+                className={({ isActive }) =>
+                  `block py-3 text-lg font-medium border-b border-gray-100 ${
+                    isActive ? "text-red-600" : "hover:text-red-600"
+                  }`
+                }
+              >
+                For Patients
+              </NavLink>
+
+              <NavLink 
+                to="/donate"
+                className={({ isActive }) =>
+                  `block py-3 text-lg font-medium border-b border-gray-100 ${
+                    isActive ? "text-red-600" : "hover:text-red-600"
+                  }`
+                }
+              >
+                Donation
+              </NavLink>
+
+              <NavLink 
+                to="/get-involved"
+                className={({ isActive }) =>
+                  `block py-3 text-lg font-medium border-b border-gray-100 ${
+                    isActive ? "text-red-600" : "hover:text-red-600"
+                  }`
+                }
+              >
+                Get Involved
+              </NavLink>
+
+              <NavLink 
+                to="/about"
+                className={({ isActive }) =>
+                  `block py-3 text-lg font-medium border-b border-gray-100 ${
+                    isActive ? "text-red-600" : "hover:text-red-600"
+                  }`
+                }
+              >
+                About Us
+              </NavLink>
+
               {/* Support Accordion */}
               <div className="pt-2">
                 <button 
@@ -147,9 +196,9 @@ export const Navbar = ({ withTop = false }) => {
                 </button>
                 {supportDropdownOpen && (
                   <div className="pl-4 space-y-2 mt-2">
-                    <a href="/financial-aid" className="block py-2 text-base hover:text-red-600">Financial Aid</a>
-                    <a href="/volunteer" className="block py-2 text-base hover:text-red-600">Volunteer</a>
-                    <a href="/counseling" className="block py-2 text-base hover:text-red-600">Counseling</a>
+                    <NavLink to="/financial-aid" className="block py-2 text-base hover:text-red-600">Financial Aid</NavLink>
+                    <NavLink to="/volunteer" className="block py-2 text-base hover:text-red-600">Volunteer</NavLink>
+                    <NavLink to="/counseling" className="block py-2 text-base hover:text-red-600">Counseling</NavLink>
                   </div>
                 )}
               </div>
@@ -157,18 +206,18 @@ export const Navbar = ({ withTop = false }) => {
 
             {/* Drawer Footer */}
             <div className="p-4 border-t">
-              <a 
-                href="/register-donor" 
+              <NavLink 
+                to="/register-donor" 
                 className="block w-full text-center bg-red-600 hover:bg-red-700 text-white py-3 px-4 rounded-full font-medium mb-3"
               >
                 Join Registry
-              </a>
-              <a 
-                href="/donate" 
+              </NavLink>
+              <NavLink 
+                to="/donate" 
                 className="block w-full text-center bg-teal-600 hover:bg-teal-700 text-white py-3 px-4 rounded-full font-medium"
               >
                 Donate
-              </a>
+              </NavLink>
             </div>
           </div>
         </div>
