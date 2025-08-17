@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BiChevronDown, BiMenu, BiX } from "react-icons/bi";
+import { NavLink } from "react-router-dom";
 
 export const Navbar = ({ withTop = false }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,9 +20,13 @@ export const Navbar = ({ withTop = false }) => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6">
-          <a href="/" className="text-base uppercase font-semibold hover:text-red-600 transition-colors">
+          <NavLink  href="/" className={({ isActive }) =>
+      `text-base uppercase font-semibold transition-colors ${
+        isActive ? "text-red-600" : "hover:text-red-600"
+      }`
+    }>
             HOME
-          </a>
+          </NavLink >
           <a className="text-base uppercase font-semibold hover:text-red-600 transition-colors">
             FOR PATIENTS
           </a>
