@@ -51,7 +51,7 @@ useEffect(() => {
         {/* Footer */}
         <div className="pt-4 mt-auto border-t border-gray-100 flex justify-between items-center">
           <span className="text-sm font-medium">{caseItem.deadline}</span>
-          <button className="btn btn-sm bg-red-600 text-white">Help Now</button>
+          <a className="btn btn-sm bg-red-600 text-white">Help Now</a>
         </div>
       </div>
     </div>
