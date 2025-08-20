@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { FaUpload, FaArrowLeft } from 'react-icons/fa';
+import Header from '../Home/Header';
+import Footer from '../Home/Footer';
 
 const ApplicationForm = () => {
   const apiUrl = process.env.REACT_APP_API_URL;
@@ -144,6 +146,7 @@ selectedNeeds.forEach((need, index) => {
 };
   return (
     <>
+    <Header/>
     <div className="bg-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         <button 
@@ -499,6 +502,7 @@ selectedNeeds.forEach((need, index) => {
         </form>
       </div>
     </div>
+    <Footer/>
     </>
   );
 };
