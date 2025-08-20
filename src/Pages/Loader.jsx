@@ -2,12 +2,14 @@ import React from "react";
 
 const Loader = () => {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-white z-500">
-      <div className="flex flex-row gap-2">
-        <div className="w-4 h-4 rounded-full bg-red-500 animate-bounce"></div>
-        <div className="w-4 h-4 rounded-full bg-red-500 animate-bounce [animation-delay:-.3s]"></div>
-        <div className="w-4 h-4 rounded-full bg-red-500 animate-bounce [animation-delay:-.5s]"></div>
-      </div>
+    <div className="fixed inset-0 flex flex-col items-center justify-center bg-white z-50">
+      {/* Spinner */}
+      <div className="w-14 h-14 border-4 border-red-600 border-t-transparent rounded-full animate-spin"></div>
+      
+      {/* Text */}
+      <p className="mt-4 text-gray-700 text-lg font-medium animate-pulse">
+        Loading, please wait…
+      </p>
     </div>
   );
 };

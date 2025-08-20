@@ -7,7 +7,7 @@ export const Navbar = ({ withTop = false }) => {
   const [supportDropdownOpen, setSupportDropdownOpen] = useState(false);
 
   return (
-    <nav className={`z-30 w-full shadow-md bg-white ${withTop ? 'sticky top-0' : 'fixed top-0'}`}>
+    <nav className={`z-40 w-full shadow-md bg-white ${withTop ? 'sticky top-0' : 'fixed top-0'}`}>
       <div className='container flex items-center justify-between px-4 py-3'>
         {/* HopeCell Logo*/}
         <NavLink to="/" className='text-white'>
@@ -31,7 +31,7 @@ export const Navbar = ({ withTop = false }) => {
             HOME
           </NavLink>
 
-          <NavLink 
+          {/* <NavLink 
           
             className={({ isActive }) =>
               `text-base uppercase font-semibold transition-colors ${
@@ -40,7 +40,7 @@ export const Navbar = ({ withTop = false }) => {
             }
           >
             FOR PATIENTS
-          </NavLink>
+          </NavLink> */}
 
           <NavLink 
             to="/donate"
@@ -62,6 +62,16 @@ export const Navbar = ({ withTop = false }) => {
             }
           >
             GET INVOLVED
+          </NavLink>
+     <NavLink 
+            to="/volunteer-page"
+            className={({ isActive }) =>
+              `text-base uppercase font-semibold transition-colors ${
+                isActive ? "text-red-600" : "hover:text-red-600"
+              }`
+            }
+          >
+           Join Volunteer
           </NavLink>
 
           <NavLink 
