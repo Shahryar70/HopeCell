@@ -12,7 +12,7 @@ export const Navbar = ({ withTop = false }) => {
         {/* HopeCell Logo*/}
         <NavLink to="/" className='text-white'>
           <img 
-            src="./Assets/Images/Home/HopeLogo_2.png" 
+            src="../Assets/Images/Home/HopeLogo_2.png" 
             alt="HopeCell Logo" 
             className="h-20 w-auto object-contain" 
           />
