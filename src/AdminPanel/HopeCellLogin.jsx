@@ -7,24 +7,32 @@ const HopeCellLogin = () => {
   const [message, setMessage] = useState('');
   const apiUrl = process.env.REACT_APP_API_URL;
   const navigate = useNavigate(); // ✅ correct usage
-  useEffect(() => {
-    const token = localStorage.getItem('token');
+useEffect(() => {
+  const checkAuth = async () => {
+    const token = localStorage.getItem("token");
     if (token) {
-      axios.get(`${apiUrl}/api/Auth/admin-only`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then(res => {
-        // User is already logged in, redirect to admin
-        navigate('/admin');
-      })
-      .catch(err => {
-        // Invalid or expired token
-        console.log('Invalid token:', err.response?.status);
-      });
+      try {
+        const res = await axios.get(`${apiUrl}/api/Auth/admin-only`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        // ✅ If the token is valid
+        if (res.status === 200) {
+          navigate("/admin");
+        }
+      } catch (err) {
+        // ❌ Token invalid or expired → stay on login
+        console.log("Invalid token:", err.response?.status);
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+      }
     }
-  }, [apiUrl, navigate]);
+  };
+
+  checkAuth();
+}, [apiUrl, navigate]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage('');
