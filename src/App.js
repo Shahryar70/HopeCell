@@ -25,23 +25,23 @@ import UrgentNeeds from './Home/UrgentNeeds';
 import Loader from './Pages/Loader';
 
 function App() {
-  const location = useLocation();
-  const [loading, setLoading] = useState(false);
+  // const location = useLocation();
+  // const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    setLoading(true);
+  // useEffect(() => {
+  //   setLoading(true);
 
-    // fake delay to show loader (adjust time as needed)
-    const timeout = setTimeout(() => {
-      setLoading(false);
-    }, 500);
+  //   // fake delay to show loader (adjust time as needed)
+  //   const timeout = setTimeout(() => {
+  //     setLoading(false);
+  //   }, 500);
 
-    return () => clearTimeout(timeout);
-  }, [location]);
+  //   return () => clearTimeout(timeout);
+  // }, [location]);
 
   return (
     <div>
-      {loading && <Loader />}
+      {/* {loading && <Loader />} */}
       <Routes>
         <Route path="/" element={<HomePagesCall />} />
         <Route path='/get-involved' element={<GetInvolved />} />

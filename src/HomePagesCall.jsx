@@ -15,10 +15,10 @@ const HomePagesCall = () => {
      <Header/>
      <HeroBanner/>
      <States/>
-     <Process/> 
-     <Testimonials/>
+        <Process/> 
+       <UrgentNeeds/>
       <TreatmentSupport/>
-     <UrgentNeeds/>
+           <Testimonials/>
         <FAQSection/>
        <DonorCTA/>
     
